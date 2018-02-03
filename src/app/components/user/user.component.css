@@ -1,0 +1,9 @@
+.modal-backdrop {
+  opacity: 0.3;
+}
+.modal {
+  display: block;
+}
+.btn-social img {
+  max-height: 30px;
+}

@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "http://challenge.raphael.website:9000",
+    "secure": false
+  }
+}

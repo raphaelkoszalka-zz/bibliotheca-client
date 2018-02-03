@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-md-12">
+    <button *ngIf="!user" class="btn btn-block btn-info" (click)="userModalLoginVisibility(true)">Login</button>
+  </div>
+  <div class="col-md-12">
+    <button *ngIf="user" class="btn btn-block btn-info" (click)="logout(true)">Logout</button>
+  </div>
+</div>
+
+
+
+<div *ngIf="modalVisible"  [@fade]>
+  <div class="modal-backdrop"></div>
+  <div class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Welcome to Knowledge Bilbiotheca!</h5>
+          <button class="close" aria-label="Close"
+                  (click)="userModalLoginVisibility(false)"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="text-center">Choose any of the social networks listed below to login:</p>
+          <hr />
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <button class="btn btn-primary btn-block btn-social" (click)="facebookLogin()">
+                <img src="./assets/icons/social/facebook.svg" alt="">
+              </button>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <button class="btn btn-primary btn-block btn-social" (click)="googleLogin()">
+                <img src="./assets/icons/social/google.svg" alt="">
+              </button>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <button class="btn btn-block"
+                      (click)="userModalLoginVisibility(false)"
+              >
+                Cotinue without login
+              </button>
+            </div>
+          </div>
+          <hr>
+          <p class="text-center font-weight-bold">
+            Knowledge Bilbiotheca
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
