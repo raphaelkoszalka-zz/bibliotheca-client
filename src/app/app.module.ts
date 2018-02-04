@@ -20,9 +20,9 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { QueryBuilderService } from './services/query-builder.service';
-import { HomeResolver } from './components/home/home.resolver';
-import { HomeService } from './components/home/home.service';
 import { BookCardComponent } from './components/book-card/book-card.component';
+import { GenericHttpService } from './services/http.service';
+import { BookListResolver } from './components/book-list/book-list.resolver';
 
 @NgModule({
   declarations: [
@@ -49,8 +49,8 @@ import { BookCardComponent } from './components/book-card/book-card.component';
     { provide: AuthServiceConfig, useFactory: provideConfig },
     UserService,
     QueryBuilderService,
-    HomeResolver,
-    HomeService
+    GenericHttpService,
+    BookListResolver
   ],
   bootstrap: [AppComponent]
 })

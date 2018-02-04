@@ -3,16 +3,17 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import { DevChallengeConstants } from '../../app.constants';
-import { HomeService } from './home.service';
 import { QueryBuilderService } from '../../services/query-builder.service';
+import { GenericHttpService } from '../../services/http.service';
 import 'rxjs';
 
 @Injectable()
-export class HomeResolver implements Resolve<any> {
+export class BookListResolver implements Resolve<any> {
 
-  constructor(private http: HomeService, private queryBuilder: QueryBuilderService) {}
+  constructor(private http: GenericHttpService, private queryBuilder: QueryBuilderService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<object>>  {
+    console.log(route);
     const HOME_QUERIES: Array<object> = [{ key: 'q', value: 'programming'}, { key: 'maxResults', value: 12}];
     return Observable.create((observer: Observer<any>) => {
       this.http.get(DevChallengeConstants.GOOGLE_BOOKS_HOME + this.queryBuilder.builder(HOME_QUERIES))

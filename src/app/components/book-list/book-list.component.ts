@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-book-list',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookListComponent implements OnInit {
 
-  constructor() { }
+  public books: Observable<Array<object>>;
+
+  constructor(private router: ActivatedRoute) {
+    router.data.pluck('books')
+      .subscribe( (books: Observable<Array<object>>) => this.books = books );
+  }
 
   ngOnInit() {
   }

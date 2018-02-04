@@ -36,7 +36,6 @@ export class UserComponent implements OnInit {
 
   public facebookLogin(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    console.log(this.user);
   }
 
   public googleLogin(): void {
@@ -46,14 +45,16 @@ export class UserComponent implements OnInit {
   public logout(): void {
     this.authService.signOut();
     this.user = null;
+    localStorage.clear();
   }
 
   public userModalLoginVisibility(isVisible: boolean): void {
     this.modalVisible = isVisible;
   }
 
-  private userLoggedIn(res): void {
-    console.log(res);
+  private userLoggedIn(user): void {
+    localStorage.setItem('USER', JSON.stringify(user));
+    this.userModalLoginVisibility(false);
   }
 
   private getAccessToken(user: SocialUser) : void {

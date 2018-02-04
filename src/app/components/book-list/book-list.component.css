@@ -1,0 +1,7 @@
+section {
+  padding-top: 25px;
+  padding-bottom: 45px;
+  overflow: auto;
+  width: 100%;
+  height: calc(100% - 40px);
+}

@@ -1,3 +1,10 @@
-<p>
-  book-list works!
-</p>
+<section>
+  <div class="row">
+    <div class="col-sm-12 card-deck">
+      <div class="col-md-4" *ngFor="let book of books['items']" >
+        <app-book-card [book]="book"></app-book-card>
+        <hr>
+      </div>
+    </div>
+  </div>
+</section>
