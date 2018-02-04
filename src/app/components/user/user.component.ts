@@ -1,23 +1,26 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { BroadcasterService } from '../../services/broadcaster.service';
-import { FadeAnimation } from '../../app.animations';
+import { FadeAnimation, SlideAnimation } from '../../app.animations';
 import { AuthService } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { UserService } from './user.service';
+import { AuthenticatedUser } from './user';
 
 
 @Component({
   selector: 'app-auth',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
-  animations: [FadeAnimation]
+  animations: [FadeAnimation, SlideAnimation]
 })
 
 export class UserComponent implements OnInit {
 
-  public user: SocialUser;
+  public socialUser: SocialUser;
+  public authenticatedUser: AuthenticatedUser;
   public modalVisible: boolean = false;
+  public userMenuVisible: boolean = false;
 
   constructor(
     private broadcaster: BroadcasterService,
@@ -43,8 +46,9 @@ export class UserComponent implements OnInit {
   }
 
   public logout(): void {
+    this.socialUser = null;
+    this.authenticatedUser = null;
     this.authService.signOut();
-    this.user = null;
     localStorage.clear();
   }
 
@@ -52,13 +56,18 @@ export class UserComponent implements OnInit {
     this.modalVisible = isVisible;
   }
 
+  public userMenuVisibility(isVisible: boolean): void {
+    this.userMenuVisible = isVisible;
+  }
+
   private userLoggedIn(user): void {
-    localStorage.setItem('USER', JSON.stringify(user));
+    this.authenticatedUser = user;
     this.userModalLoginVisibility(false);
+    localStorage.setItem('USER', JSON.stringify(user));
   }
 
   private getAccessToken(user: SocialUser) : void {
-    this.user = user;
+    this.socialUser = user;
     this.http.getApiAccessToken(user).subscribe( res => this.userLoggedIn(res) );
   }
 }
