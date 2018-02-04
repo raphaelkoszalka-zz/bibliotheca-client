@@ -23,6 +23,7 @@ import { QueryBuilderService } from './services/query-builder.service';
 import { BookCardComponent } from './components/book-card/book-card.component';
 import { GenericHttpService } from './services/http.service';
 import { BookListResolver } from './components/book-list/book-list.resolver';
+import { UserAuthenticatedComponent } from './components/user-authenticated/user-authenticated.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BookListResolver } from './components/book-list/book-list.resolver';
     CheckoutComponent,
     FooterComponent,
     ShoppingCartComponent,
-    BookCardComponent
+    BookCardComponent,
+    UserAuthenticatedComponent
   ],
   imports: [
     BrowserModule,

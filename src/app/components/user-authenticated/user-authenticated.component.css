@@ -1,0 +1,41 @@
+h5 {
+  color: white;
+  padding-right: 70px;
+  padding-top: 25px;
+}
+.auth-user {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 74px;
+  background-color: #1B2A49;
+  cursor: pointer;
+}
+#auth-user-avatar {
+  border: 2px solid #efefef;
+  max-height: 50px;
+  border-radius: 50%;
+  position: fixed;
+  top: 10px;
+  right: 15px;
+}
+#auth-user-menu {
+  position: fixed;
+  right: 0;
+  height: 165px;
+  top: 74px;
+  background-color: #1B2A49;
+  z-index: 8000;
+  width: 300px;
+}
+.auth-user-menu-item {
+  padding-top: 15px;
+  color: white;
+  height: 55px;
+  width: 300px;
+  border-bottom: 1px dashed #FFF;
+}
+.auth-user-menu-item h6 {
+  display: inline-block;
+}

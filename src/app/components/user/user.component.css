@@ -4,24 +4,3 @@
 .modal {
   display: block;
 }
-.btn-social img {
-  max-height: 30px;
-}
-#auth-user-avatar {
-  border: 2px solid #efefef;
-  max-height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  position: fixed;
-  top: 10px;
-  right: 15px;
-}
-#auth-user-menu {
-  position: fixed;
-  right: 0;
-  height: 100%;
-  top: 74px;
-  background-color: #22355C;
-  z-index: 8000;
-  width: 250px;
-}

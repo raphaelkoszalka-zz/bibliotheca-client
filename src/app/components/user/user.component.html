@@ -4,18 +4,7 @@
   </div>
 </div>
 
-<div class="row" *ngIf="authenticatedUser">
-  <div class="col-md-12 text-right">
-    <img [src]="authenticatedUser.user.picture"
-         id="auth-user-avatar"
-         (mouseenter)="userMenuVisibility(true)"
-    />
-  </div>
-  <div *ngIf="userMenuVisible" id="auth-user-menu" (mouseleave)="userMenuVisibility(false)" [@slide]>
-
-  </div>
-</div>
-
+<app-user-authenticated *ngIf="authenticatedUser" [authenticatedUser]="authenticatedUser"></app-user-authenticated>
 
 <div *ngIf="modalVisible" [@fade]>
   <div class="modal-backdrop"></div>

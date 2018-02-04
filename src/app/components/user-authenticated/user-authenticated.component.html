@@ -1,0 +1,25 @@
+<div class="auth-user"(mouseenter)="userMenuVisibility(true)" (click)="userMenuVisibility(true)">
+  <div class="col-md-12 text-right">
+    <h5>Hello, {{authenticatedUser.user.name}}</h5>
+    <img [src]="authenticatedUser.user.picture" id="auth-user-avatar" />
+  </div>
+  <div *ngIf="userMenuVisible" id="auth-user-menu" (mouseleave)="userMenuVisibility(false)" [@menuSlide]>
+    <div id="auth-user-menu-list">
+      <div class="auth-user-menu-item">
+        <div class="col-md-12">
+          <i class="demo-icon icon-basket"></i> <h6>My Shopping Cart</h6>
+        </div>
+      </div>
+      <div class="auth-user-menu-item">
+        <div class="col-md-12">
+          <i class="demo-icon icon-address-card"></i> <h6>My Account</h6>
+        </div>
+      </div>
+      <div class="auth-user-menu-item">
+        <div class="col-md-12">
+          <i class="demo-icon icon-logout-1"></i> <h6>Logout</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

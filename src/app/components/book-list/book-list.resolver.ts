@@ -14,7 +14,10 @@ export class BookListResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<object>>  {
     console.log(route);
-    const HOME_QUERIES: Array<object> = [{ key: 'q', value: 'programming'}, { key: 'maxResults', value: 12}];
+    const HOME_QUERIES: Array<object> = [
+      { key: 'q', value: 'programming'},
+      { key: 'maxResults', value: 12}
+    ];
     return Observable.create((observer: Observer<any>) => {
       this.http.get(DevChallengeConstants.GOOGLE_BOOKS_HOME + this.queryBuilder.builder(HOME_QUERIES))
         .subscribe(

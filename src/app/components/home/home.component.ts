@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    // cover images enum
     const coverMap: object = {
       0: './assets/cover/alex-block-340243-min.jpg',
       1: './assets/cover/chuttersnap-344467-min.jpg',
@@ -25,6 +26,8 @@ export class HomeComponent implements OnInit {
       5: './assets/cover/tu-tram-pham-147910-min.jpg',
       6: './assets/cover/will-van-wingerden-102454-min.jpg'
     };
+
+    // cover background styles object to apply with [ngStyle]
     this.backgroundStyles = {
       'background-image': 'url(' + coverMap[HomeComponent.getRandomInt(0,6)] + ')',
       'background-size': 'cover',
@@ -32,7 +35,15 @@ export class HomeComponent implements OnInit {
       'background-position': 'center center',
       ' background': 'lightblue'
     };
+
+    // better fluid, better loader than image loading in blocks
+    // smaller images would be even better :/ haha
     setTimeout( () => this.loadingImage = false, 300);
+
+    // change cover image every minute
+    setInterval(() =>
+        this.backgroundStyles['background-image'] = 'url(' + coverMap[HomeComponent.getRandomInt(0,6)] + ')'
+      , 60000);
   }
 
   private static getRandomInt(min: number, max: number): number {

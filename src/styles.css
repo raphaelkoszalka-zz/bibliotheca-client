@@ -49,7 +49,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-color: #d2d6de;
-  z-index: 8000;
+  z-index: 11000;
 }
 .loader {
   height: 100px;

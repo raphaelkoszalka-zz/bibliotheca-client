@@ -1,18 +1,18 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { BroadcasterService } from '../../services/broadcaster.service';
-import { FadeAnimation, SlideAnimation } from '../../app.animations';
+import { FadeAnimation } from '../../app.animations';
 import { AuthService } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { UserService } from './user.service';
-import { AuthenticatedUser } from './user';
+import { AuthenticatedUser } from '../user-authenticated/user-authenticated';
 
 
 @Component({
   selector: 'app-auth',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
-  animations: [FadeAnimation, SlideAnimation]
+  animations: [FadeAnimation]
 })
 
 export class UserComponent implements OnInit {
@@ -20,7 +20,6 @@ export class UserComponent implements OnInit {
   public socialUser: SocialUser;
   public authenticatedUser: AuthenticatedUser;
   public modalVisible: boolean = false;
-  public userMenuVisible: boolean = false;
 
   constructor(
     private broadcaster: BroadcasterService,
@@ -54,10 +53,6 @@ export class UserComponent implements OnInit {
 
   public userModalLoginVisibility(isVisible: boolean): void {
     this.modalVisible = isVisible;
-  }
-
-  public userMenuVisibility(isVisible: boolean): void {
-    this.userMenuVisible = isVisible;
   }
 
   private userLoggedIn(user): void {
