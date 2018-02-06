@@ -1,0 +1,10 @@
+section {
+  position: fixed;
+  right: 10px;
+  width: 25%;
+}
+
+.shop-cart {
+  border: 1px solid #593196;
+  padding: 10px;
+}

@@ -1,3 +1,24 @@
-<p>
-  checkout works!
-</p>
+<section>
+  <div class="checkout">
+    <div class="col-sm-12">
+      <h1 class="display-5">Checkout:</h1>
+      <hr>
+    </div>
+    <div class="col-sm-12">
+      <div class="shop-cart">
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Total Books:
+            <span class="badge badge-primary badge-pill">{{numberOfBooks}}</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Total Price
+            <span class="badge badge-primary badge-pill">$ {{totalAmount}}</span>
+          </li>
+        </ul>
+        <hr>
+        <button class="btn btn-block btn-primary">Checkout</button>
+      </div>
+    </div>
+  </div>
+</section>

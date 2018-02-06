@@ -21,9 +21,3 @@ section {
   border: 1px solid #593196;
   padding: 10px;
 }
-.checkout {
-  position: fixed;
-  right: 10px;
-  width: inherit;
-  max-width: 25%;
-}
