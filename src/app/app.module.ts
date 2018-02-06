@@ -24,6 +24,13 @@ import { BookCardComponent } from './components/book-card/book-card.component';
 import { GenericHttpService } from './services/http.service';
 import { BookListResolver } from './components/book-list/book-list.resolver';
 import { UserAuthenticatedComponent } from './components/user-authenticated/user-authenticated.component';
+import { TipsterComponent } from './components/tipster/tipster.component';
+import { SubStringPipe } from './pipes/substring.pipe';
+import { BasketComponent } from './components/basket/basket.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { BasketService } from './components/basket/basket.service';
+import { ShoppingCartResolver } from './components/shopping-cart/shopping-cart.resolver';
+import { PricePipe } from './pipes/price.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +44,12 @@ import { UserAuthenticatedComponent } from './components/user-authenticated/user
     FooterComponent,
     ShoppingCartComponent,
     BookCardComponent,
-    UserAuthenticatedComponent
+    UserAuthenticatedComponent,
+    TipsterComponent,
+    SubStringPipe,
+    BasketComponent,
+    ModalComponent,
+    PricePipe
   ],
   imports: [
     BrowserModule,
@@ -52,7 +64,9 @@ import { UserAuthenticatedComponent } from './components/user-authenticated/user
     UserService,
     QueryBuilderService,
     GenericHttpService,
-    BookListResolver
+    BookListResolver,
+    ShoppingCartResolver,
+    BasketService
   ],
   bootstrap: [AppComponent]
 })

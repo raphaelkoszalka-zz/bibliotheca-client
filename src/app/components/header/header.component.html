@@ -1,8 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark  navbar-rd">
-  <div class="col-sm-2">
-    <a class="navbar-brand" href="#">Knowledge Bilbiotheca</a>
+  <div class="col-sm-6">
+    <a [routerLink]="['/home']">
+      <h3>Knowledge <strong>Bilbiotheca</strong></h3>
+    </a>
   </div>
-  <div class="col-sm-4 offset-6">
+  <div class="col-sm-6">
     <app-auth></app-auth>
   </div>
 </nav>

@@ -1,7 +1,8 @@
 <div class="card border-secondary">
-  <div class="card-header">Header</div>
+  <div class="card-header">{{book.volumeInfo.title}}</div>
   <div class="card-body text-secondary">
-    <h4 class="card-title">Secondary card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <img src="{{book.volumeInfo.imageLinks.thumbnail}}" class="img-thumbnail"  alt="">
+    <p class="card-text">{{book.volumeInfo.description | substr}}</p>
+    <app-basket [book]="book"></app-basket>
   </div>
 </div>

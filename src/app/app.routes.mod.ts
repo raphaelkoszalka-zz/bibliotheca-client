@@ -7,6 +7,7 @@ import { BookListComponent } from './components/book-list/book-list.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AuthGuard } from './guardians/auth.guardian';
 import { BookListResolver } from './components/book-list/book-list.resolver';
+import { ShoppingCartResolver } from './components/shopping-cart/shopping-cart.resolver';
 
 const ROUTES: Routes = [
   {
@@ -23,6 +24,7 @@ const ROUTES: Routes = [
     path: 'shopping-cart',
     component: ShoppingCartComponent,
     canActivate: [AuthGuard],
+    resolve: { 'basket': ShoppingCartResolver }
   },{
     path: 'books/:category',
     component: BookListComponent,

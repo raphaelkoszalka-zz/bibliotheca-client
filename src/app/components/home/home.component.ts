@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -11,9 +11,12 @@ export class HomeComponent implements OnInit {
 
   public backgroundStyles: object;
   public loadingImage: boolean = true;
+  public searchParameter: string = '';
 
-  constructor(private router: ActivatedRoute) {
+  constructor(private router: Router) {
   }
+
+  @HostListener('window:keyup', ['$event']) keyEvent(event: KeyboardEvent) { this.keyPressed(event) }
 
   ngOnInit() {
     // cover images enum
@@ -43,8 +46,27 @@ export class HomeComponent implements OnInit {
     // change cover image every minute
     setInterval(() =>
         this.backgroundStyles['background-image'] = 'url(' + coverMap[HomeComponent.getRandomInt(0,6)] + ')'
-      , 60000);
+      , 30000);
   }
+
+  // @todo: improve keycode events validation (remove if's);
+  private keyPressed(event): void {
+    if ((event.keyCode === 13) && (this.searchParameter.length > 1)) {
+      this.router.navigate(['books', this.searchParameter]);
+    }
+    if ((event.keyCode === 8) && (this.searchParameter.length > 0)) {
+      this.searchParameter = this.searchParameter.substring(0, this.searchParameter.length - 1);
+      return;
+    }
+    if (HomeComponent.alphaOnly(event)) {
+      this.searchParameter += event['key'];
+    }
+  }
+
+  private static alphaOnly(event): boolean {
+    const key = event.keyCode;
+    return ((key >= 65 && key <= 90));
+  };
 
   private static getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;

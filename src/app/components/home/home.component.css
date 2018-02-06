@@ -5,3 +5,30 @@ section {
   top: 0;
   left: 0;
 }
+
+.input-area-wrapper {
+  width: 100%;
+  height: 250px;
+  top: 50%;
+  margin-top: -125px;
+  position: fixed;
+}
+.input-area-wrapper h1 {
+  color: #FFF;
+  text-align: center;
+  display: inline-block;
+  font-size: 3.5em;
+  text-shadow: 1px 1px 2px #0c0a10 !important;
+}
+.input-area-wrapper  strong {
+  text-shadow: 1px 1px 2px #0c0a10 !important;
+  font-size: 1.3em;
+}
+
+.dash_blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}

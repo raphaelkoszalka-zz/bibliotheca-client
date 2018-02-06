@@ -6,19 +6,25 @@
   <div *ngIf="userMenuVisible" id="auth-user-menu" (mouseleave)="userMenuVisibility(false)" [@menuSlide]>
     <div id="auth-user-menu-list">
       <div class="auth-user-menu-item">
-        <div class="col-md-12">
-          <i class="demo-icon icon-basket"></i> <h6>My Shopping Cart</h6>
-        </div>
+        <a [routerLink]="['/shopping-cart']">
+          <div class="col-md-12">
+            <i class="demo-icon icon-basket"></i> <h6>My Shopping Cart</h6>
+          </div>
+        </a>
       </div>
       <div class="auth-user-menu-item">
-        <div class="col-md-12">
-          <i class="demo-icon icon-address-card"></i> <h6>My Account</h6>
-        </div>
+        <a [routerLink]="['/my-account']">
+          <div class="col-md-12">
+            <i class="demo-icon icon-address-card"></i> <h6>My Account</h6>
+          </div>
+        </a>
       </div>
       <div class="auth-user-menu-item">
-        <div class="col-md-12">
-          <i class="demo-icon icon-logout-1"></i> <h6>Logout</h6>
-        </div>
+        <a [routerLink]="['/shopping-cart']">
+          <div class="col-md-12">
+            <i class="demo-icon icon-logout-1"></i> <h6>Logout</h6>
+          </div>
+        </a>
       </div>
     </div>
   </div>

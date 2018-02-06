@@ -9,6 +9,9 @@ html, body {
   height: 100%;
 }
 
+/* remove links hover underline */
+a:hover { text-decoration: none; }
+
 /* global section overlay */
 .section-overlay {
   background: rgba(0,0,0,0.3);
@@ -22,7 +25,7 @@ html, body {
 
 /* global scrollbar */
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .5);
   background-color: #F5F5F5;
 }
 ::-webkit-scrollbar {

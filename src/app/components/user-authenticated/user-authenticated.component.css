@@ -3,6 +3,9 @@ h5 {
   padding-right: 70px;
   padding-top: 25px;
 }
+a {
+  color: white;
+}
 .auth-user {
   position: fixed;
   top: 0;

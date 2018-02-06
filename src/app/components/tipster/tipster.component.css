@@ -1,0 +1,7 @@
+.alert {
+  z-index: 12000;
+  position: fixed;
+  bottom: 85px;
+  right: 50%;
+  margin-right: -216px;
+}

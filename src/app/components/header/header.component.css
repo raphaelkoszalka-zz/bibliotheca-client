@@ -1,3 +1,12 @@
+h3 {
+  color: white;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px #0c0a10 !important;
+}
+strong  {
+  display: inline-block;
+  text-shadow: 1px 1px 2px #0c0a10 !important;
+}
 .navbar-rd {
   background-color: #22355C;
   z-index: 9000;

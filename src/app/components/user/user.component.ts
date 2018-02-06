@@ -58,7 +58,8 @@ export class UserComponent implements OnInit {
   private userLoggedIn(user): void {
     this.authenticatedUser = user;
     this.userModalLoginVisibility(false);
-    localStorage.setItem('USER', JSON.stringify(user));
+    localStorage.setItem('TOKEN', user['token']);
+    localStorage.setItem('USER_ID', user['user']['id']);
   }
 
   private getAccessToken(user: SocialUser) : void {

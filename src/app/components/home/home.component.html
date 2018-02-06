@@ -1,5 +1,15 @@
 <section [ngStyle]="backgroundStyles">
-  <div class="section-overlay"></div>
+  <!-- i've made a tipster component to evolve to a generic tipster -->
+  <app-tipster></app-tipster>
+  <div class="section-overlay">
+    <div class="input-area-wrapper text-center">
+      <h1 class="text-center">
+        I would like to <br /> <strong>learn more</strong> about
+      </h1>
+      <br />
+      <h1 class="input-area-blinking-dash dash_blink"> {{searchParameter}} _</h1>
+    </div>
+  </div>
   <div class="loader-wrapper" *ngIf="loadingImage">
     <div class="loader"></div>
   </div>

@@ -1,0 +1,29 @@
+section {
+  padding-top: 25px;
+  padding-bottom: 45px;
+  overflow: auto;
+  width: 100%;
+  height: calc(100% - 40px);
+}
+.btn {
+  padding-left: 10px;
+}
+.book-padding {
+  padding-top: 10px;
+}
+.info {
+  padding-top: 5px;
+}
+.options {
+  padding-top: 14px;
+}
+.shop-cart {
+  border: 1px solid #593196;
+  padding: 10px;
+}
+.checkout {
+  position: fixed;
+  right: 10px;
+  width: inherit;
+  max-width: 25%;
+}
