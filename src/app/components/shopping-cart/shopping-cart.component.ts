@@ -3,7 +3,6 @@ import { BasketService } from '../basket/basket.service';
 import { Basket } from '../basket/basket';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { BroadcasterService } from '../../services/broadcaster.service';
 import { BibliothecaConstants } from '../../app.constants';
 
 @Component({
@@ -11,6 +10,7 @@ import { BibliothecaConstants } from '../../app.constants';
   templateUrl: './shopping-cart.component.html',
   styleUrls: ['./shopping-cart.component.css']
 })
+
 export class ShoppingCartComponent implements OnInit{
 
   public myBasket: Observable<Array<Basket>>;

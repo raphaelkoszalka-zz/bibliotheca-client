@@ -1,21 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { FadeAnimation } from '../../app.animations';
 
 @Component({
   selector: 'app-book',
   templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css']
+  styleUrls: ['./book.component.css'],
+  animations: [FadeAnimation]
 })
-export class BookComponent implements OnInit {
+export class BookComponent  {
 
   @Input()
   public book;
+  public detail: boolean = false;
   constructor() { }
 
-  ngOnInit() {
-  }
 
   public viewBookDetail(): void {
-    console.log(this.book);
+    this.detail = true;
   }
 
 }

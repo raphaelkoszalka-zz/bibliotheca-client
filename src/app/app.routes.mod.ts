@@ -28,19 +28,16 @@ const ROUTES: Routes = [
   },{
     path: 'books/:category',
     component: BookListComponent,
-    resolve: { 'books': BookListResolver }
-  },{
-    path: 'book/:bookId',
-    component: BookComponent
+    resolve: { 'books': BookListResolver },
+    children: [{
+        path: ':bookId',
+        component: BookComponent
+      }]
   },{
     path: 'checkout',
     component: CheckoutComponent
   }
 ];
-// const EXTRA_OPTIONS: ExtraOptions = {
-//   onSameUrlNavigation: 'reload',
-//   enableTracing: false
-// };
 
 @NgModule({
   imports: [ RouterModule.forRoot(ROUTES) ],

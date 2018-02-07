@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AuthenticatedUser } from './user-authenticated';
 import { FadeAnimation, MenuSlideAnimation } from '../../app.animations';
+import { BroadcasterService } from '../../services/broadcaster.service';
 
 @Component({
   selector: 'app-user-authenticated',
@@ -14,12 +15,16 @@ export class UserAuthenticatedComponent implements OnInit {
   authenticatedUser: AuthenticatedUser;
   public userMenuVisible: boolean = false;
 
-  constructor() { }
+  constructor(private broadcaster: BroadcasterService) { }
 
   ngOnInit() {}
 
   public userMenuVisibility(isVisible: boolean): void {
     this.userMenuVisible = isVisible;
+  }
+
+  public logout(): void {
+    this.broadcaster.broadcast('LOGOUT');
   }
 
 }

@@ -6,6 +6,7 @@ import { SocialUser } from 'angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
 import { UserService } from './user.service';
 import { AuthenticatedUser } from '../user-authenticated/user-authenticated';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -24,12 +25,13 @@ export class UserComponent implements OnInit {
   constructor(
     private broadcaster: BroadcasterService,
     private authService: AuthService,
-    private http: UserService
-  ) {
-  }
+    private http: UserService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.authService.authState.subscribe((user) => { if (user) { this.getAccessToken(user); } });
+    this.broadcaster.on<string>('LOGOUT').subscribe(() => this.logout());
   }
 
   @HostListener('window:keyup', ['$event']) keyEvent(event: KeyboardEvent) {
@@ -49,6 +51,7 @@ export class UserComponent implements OnInit {
     this.authenticatedUser = null;
     this.authService.signOut();
     localStorage.clear();
+    this.router.navigate(['home']);
   }
 
   public userModalLoginVisibility(isVisible: boolean): void {

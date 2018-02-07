@@ -19,12 +19,10 @@
           </div>
         </a>
       </div>
-      <div class="auth-user-menu-item">
-        <a [routerLink]="['/shopping-cart']">
+      <div class="auth-user-menu-item" (click)="logout()">
           <div class="col-md-12">
             <i class="demo-icon icon-logout-1"></i> <h6>Logout</h6>
           </div>
-        </a>
       </div>
     </div>
   </div>
