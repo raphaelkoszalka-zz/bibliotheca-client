@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { BookComponent } from './components/book/book.component';
@@ -37,6 +37,10 @@ const ROUTES: Routes = [
     component: CheckoutComponent
   }
 ];
+// const EXTRA_OPTIONS: ExtraOptions = {
+//   onSameUrlNavigation: 'reload',
+//   enableTracing: false
+// };
 
 @NgModule({
   imports: [ RouterModule.forRoot(ROUTES) ],

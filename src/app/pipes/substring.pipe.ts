@@ -7,7 +7,7 @@ export class SubStringPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
     if (!value) {
-      return null;
+      return  'Book without description.';
     }
     if (value.length > 140) {
       value = value.substr(0, 140);

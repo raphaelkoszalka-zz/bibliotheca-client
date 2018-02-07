@@ -1,8 +1,14 @@
 <div class="card border-secondary">
   <div class="card-header">{{book.volumeInfo.title}}</div>
   <div class="card-body text-secondary">
-    <img src="{{book.volumeInfo.imageLinks.thumbnail}}" class="img-thumbnail"  alt="">
-    <p class="card-text">{{book.volumeInfo.description | substr}}</p>
-    <app-basket [book]="book"></app-basket>
+    <div class="row">
+      <div class="col-md-3 text-center">
+        <img src="{{book.volumeInfo.imageLinks.thumbnail}}" class="img-thumbnail"  alt="">
+      </div>
+      <div class="col-md-9">
+        <p class="card-text">{{book.volumeInfo.description | substr}}</p>
+        <app-basket [book]="book"></app-basket>
+      </div>
+    </div>
   </div>
 </div>

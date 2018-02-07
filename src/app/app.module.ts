@@ -31,6 +31,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { BasketService } from './components/basket/basket.service';
 import { ShoppingCartResolver } from './components/shopping-cart/shopping-cart.resolver';
 import { PricePipe } from './pipes/price.pipe';
+import { TypingService } from './services/typing.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { PricePipe } from './pipes/price.pipe';
     GenericHttpService,
     BookListResolver,
     ShoppingCartResolver,
-    BasketService
+    BasketService,
+    TypingService
   ],
   bootstrap: [AppComponent]
 })

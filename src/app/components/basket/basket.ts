@@ -6,7 +6,7 @@ export class Basket {
   subtitle: string|null;
   selfLink: string|null;
   thumbnail: string|null;
-  price: number|null;
+  price: string|null;
 
   constructor(title, subtitle, selfLink, thumbnail, price) {
     this.title = title;

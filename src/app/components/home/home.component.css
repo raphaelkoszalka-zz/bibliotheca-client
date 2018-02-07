@@ -24,11 +24,3 @@ section {
   text-shadow: 1px 1px 2px #0c0a10 !important;
   font-size: 1.3em;
 }
-
-.dash_blink {
-  animation: blinker 1s linear infinite;
-}
-
-@keyframes blinker {
-  50% { opacity: 0; }
-}

@@ -1,6 +1,13 @@
 <section>
+  <div class="search-bar">
+    <div class="col-md-10 offset-1 search-bar-input">
+      <h4><i class="icon-search"></i> {{searchParameter}} </h4> <h4 class="dash_blink"> __</h4>
+    </div>
+  </div>
+  <div class="clearfix"></div>
   <div class="row">
     <div class="col-sm-12 card-deck">
+      <hr>
       <div class="col-md-4" *ngFor="let book of books['items']" >
         <app-book-card [book]="book"></app-book-card>
         <hr>

@@ -1,0 +1,7 @@
+/* keeping cards aligned */
+.img-thumbnail {
+  height: 138px;
+}
+.card  {
+  height: 240px;
+}

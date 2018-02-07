@@ -44,6 +44,14 @@ a:hover { text-decoration: none; }
   color: whitesmoke;
 }
 
+/* global blinker */
+.dash_blink {
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
 /* global loader */
 .loader-wrapper {
   position: fixed;

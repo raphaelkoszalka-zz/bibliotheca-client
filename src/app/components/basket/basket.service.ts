@@ -23,8 +23,13 @@ export class BasketService {
       .catch(e => Observable.throw('Error: ' + e));
   }
 
-  public postUserBasket(item): Observable<Response> {
+  public postUserBasket(item: Basket): Observable<Response> {
     return this.http.post(BibliothecaConstants.BASKET, item, this.httpOptions)
+      .catch(e => Observable.throw('Error: ' + e));
+  }
+
+  public deleteBookFromBasket(id: string): Observable<Response> {
+    return this.http.delete(BibliothecaConstants.BASKET + '/' + id, this.httpOptions)
       .catch(e => Observable.throw('Error: ' + e));
   }
 

@@ -20,7 +20,7 @@
                 <button class="btn btn-info">
                   $ {{book.price | price}}
                 </button>
-                <button class="btn btn-danger">
+                <button class="btn btn-danger" (click)="deleteFromBasket(book.id)">
                   <i class="icon-trash"></i>
                 </button>
               </h6>

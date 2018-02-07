@@ -1,7 +1,22 @@
 section {
-  padding-top: 25px;
-  padding-bottom: 45px;
+  margin-top: 65px;
+  padding-bottom: 105px;
   overflow: auto;
   width: 100%;
   height: calc(100% - 40px);
+}
+h4 {
+  display: inline-block;
+}
+.search-bar {
+  width: 100%;
+  position: fixed;
+  top: 74px;
+  left: 0;
+  background: #38496c;
+  padding: 10px;
+  color: #FFF;
+}
+.search-bar-input {
+   border-bottom: 1px dashed white;
 }
