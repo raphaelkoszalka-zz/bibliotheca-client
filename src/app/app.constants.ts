@@ -14,7 +14,7 @@ export class BibliothecaConstants {
   // google books
   public static GOOGLE_BOOKS_KEY: string = 'AIzaSyCOp3DWsbb7LPG4XOUbhn9zfbGNcPuTtUE';
   public static GOOGLE_BOOKS_HOME: string = 'https://www.googleapis.com/books/v1/volumes';
-
+  public static GOOGLE_SINGLE_VOLUME: string = 'https://www.googleapis.com/books/v1/volumes/';
 }
 
 // avoid statically resolve symbols compilation error

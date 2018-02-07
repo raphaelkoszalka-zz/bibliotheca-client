@@ -14,7 +14,11 @@
         </div>
         <div class="row button-row"  *ngIf="user">
           <div class="col-md-5">
-            <app-book  [book]="book"></app-book>
+            <a href="/book/{{book.id}}">
+              <button class="btn btn-block btn-info">
+                <i class="icon-search"></i> Detail
+              </button>
+            </a>
           </div>
           <div class="col-md-7">
             <app-basket  [book]="book"></app-basket>

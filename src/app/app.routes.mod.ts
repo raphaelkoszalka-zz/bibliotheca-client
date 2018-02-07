@@ -8,6 +8,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { AuthGuard } from './guardians/auth.guardian';
 import { BookListResolver } from './components/book-list/book-list.resolver';
 import { ShoppingCartResolver } from './components/shopping-cart/shopping-cart.resolver';
+import { BookResolver } from './components/book/book.resolver';
 
 const ROUTES: Routes = [
   {
@@ -28,12 +29,12 @@ const ROUTES: Routes = [
   },{
     path: 'books/:category',
     component: BookListComponent,
-    resolve: { 'books': BookListResolver },
-    children: [{
-        path: ':bookId',
-        component: BookComponent
-      }]
+    resolve: { 'books': BookListResolver }
   },{
+    path: 'book/:bookId',
+    component: BookComponent,
+    resolve: { 'book': BookResolver }
+  }, {
     path: 'checkout',
     component: CheckoutComponent
   }

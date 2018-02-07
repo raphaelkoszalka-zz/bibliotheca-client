@@ -1,6 +1,8 @@
-.modal-backdrop {
-  opacity: 0.3;
-}
-.modal {
-  display: block;
+
+section {
+  margin-top: 15px;
+  padding-bottom: 105px;
+  overflow: auto;
+  width: 100%;
+  height: calc(100% - 40px);
 }

@@ -15,8 +15,8 @@
   }
 }
 @media {min-width: 700px} {
-.button-row {
-  position: absolute;
-  bottom: 5px;
-}
+  .button-row {
+    position: absolute;
+    bottom: 5px;
+  }
 }
