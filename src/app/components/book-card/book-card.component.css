@@ -6,12 +6,17 @@
   height: 240px;
   position: relative;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .card {
     height: 350px;
   }
+  .button-row {
+    margin-top: 15px;
+  }
 }
+@media {min-width: 700px} {
 .button-row {
   position: absolute;
   bottom: 5px;
+}
 }
