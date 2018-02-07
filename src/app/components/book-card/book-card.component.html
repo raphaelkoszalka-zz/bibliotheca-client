@@ -20,7 +20,7 @@
             <app-basket  [book]="book"></app-basket>
           </div>
         </div>
-        <app-book style="width: 100%"  [book]="book"></app-book>
+        <app-book style="width: 100%"  *ngIf="!user" [book]="book"></app-book>
       </div>
     </div>
     <div class="clearfix"></div>
