@@ -1,15 +1,15 @@
 <section>
   <div class="col-md-12">
     <div class="card border-secondary">
-      <div class="card-header">{{book.volumeInfo.title}}</div>
+      <div class="card-header">{{book?.volumeInfo?.title}}</div>
       <div class="card-body text-secondary">
         <div class="col-md-12">
           <hr>
           <div class="text-center">
-            <img src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="">
+            <img src="{{book?.volumeInfo?.imageLinks.thumbnail}}" alt="">
           </div>
           <hr>
-          <p>{{book.volumeInfo.description}}</p>
+          <p>{{book?.volumeInfo?.description}}</p>
           <hr>
           <div class="form-group">
             <hr>
@@ -22,9 +22,6 @@
           <p class="text-danger text-center" *ngIf="paymentNotSelected">You <strong>must</strong> select a payment type.</p>
           <button class="btn btn-block btn-primary" (click)="doCheckout()">Buy It</button>
           <hr>
-          <p class="text-center font-weight-bold">
-            Knowledge Bilbiotheca
-          </p>
         </div>
       </div>
     </div>

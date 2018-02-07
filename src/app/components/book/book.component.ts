@@ -13,21 +13,22 @@ export class BookComponent implements OnInit{
 
   @Input()
   public book;
-  public detail: boolean = false;
+  public paymentType: string;
+  public paymentNotSelected: boolean;
+
   constructor(private route: ActivatedRoute) {
     route.data.pluck('book').subscribe( (book: Observable<Array<object>>) => this.book = book );
-  }
-
-  @HostListener('window:keyup', ['$event']) keyEvent(event: KeyboardEvent) {
-    if (event.keyCode === 27) { this.detail = false; }
+    this.paymentType = '0';
   }
 
   ngOnInit() {
+    console.log('BookComponent instantiated');
     console.log(this.book);
   }
 
-  public viewBookDetail(): void {
-    this.detail = true;
+
+  public doCheckout(): void {
+
   }
 
 }
