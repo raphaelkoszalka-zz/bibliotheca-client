@@ -11,11 +11,16 @@ import { TypingService } from '../../services/typing.service';
 export class HomeComponent implements OnInit {
 
   public backgroundStyles: object;
-  public loadingImage: boolean = true;
+  public viewReady: boolean = false;
   public searchParameter: string = '';
+  public tipsterConfig: object = {
+    action : 'home',
+    class: 'alert-primary alert-home',
+    title: 'Pro Tip!',
+    message: 'Just start typing and press \'enter\' to achieve knowledge!'
+  };
 
-  constructor(private typing: TypingService) {
-  }
+  constructor(private typing: TypingService) {}
 
   @HostListener('window:keyup', ['$event']) keyEvent(event: KeyboardEvent) {
     this.searchParameter = this.typing.keyPressed(event, this.searchParameter);
@@ -44,7 +49,7 @@ export class HomeComponent implements OnInit {
 
     // better fluid, better loader than image loading in blocks
     // smaller images would be even better :/ haha
-    setTimeout( () => this.loadingImage = false, 300);
+    setTimeout( () => this.viewReady = true, 300);
 
     // change cover image every minute
     setInterval(() =>

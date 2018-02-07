@@ -32,6 +32,7 @@ import { BasketService } from './components/basket/basket.service';
 import { ShoppingCartResolver } from './components/shopping-cart/shopping-cart.resolver';
 import { PricePipe } from './pipes/price.pipe';
 import { TypingService } from './services/typing.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { TypingService } from './services/typing.service';
     HttpClientModule,
     BrowserAnimationsModule,
     SocialLoginModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     BroadcasterService,

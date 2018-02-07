@@ -1,6 +1,6 @@
-<section [ngStyle]="backgroundStyles">
+<section *ngIf="viewReady" [ngStyle]="backgroundStyles">
   <!-- i've made a tipster component to evolve to a generic tipster -->
-  <app-tipster></app-tipster>
+  <app-tipster [config]="tipsterConfig"></app-tipster>
   <div class="section-overlay">
     <div class="input-area-wrapper text-center">
       <h1 class="text-center">
@@ -10,7 +10,7 @@
       <h1 class="input-area-blinking-dash dash_blink"> {{searchParameter}} _</h1>
     </div>
   </div>
-  <div class="loader-wrapper" *ngIf="loadingImage">
+  <div class="loader-wrapper" *ngIf="!viewReady">
     <div class="loader"></div>
   </div>
 </section>

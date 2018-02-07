@@ -14,13 +14,19 @@ import { BibliothecaConstants } from '../../app.constants';
 export class ShoppingCartComponent implements OnInit{
 
   public myBasket: Observable<Array<Basket>>;
-  public total: number;
+  public total: string;
+  public showTip: boolean = false;
+  public tipsterConfig: object = {
+    action : 'delete',
+    class: 'alert-danger',
+    title: 'Removed',
+    message: 'Book removed from your cart with success.'
+  };
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private http: BasketService,
-    private broadcaster: BroadcasterService
+    private http: BasketService
   ) {
     route.data.pluck('basket').subscribe( (basket: Observable<Array<Basket>>) => this.myBasket = basket );
     router.routeReuseStrategy.shouldReuseRoute = function(){ return false; }
@@ -30,23 +36,25 @@ export class ShoppingCartComponent implements OnInit{
     this.total = this.totalAmount(this.myBasket['rows']);
   }
 
-  public totalAmount(basket: Observable<Basket>): number {
-    let totalAmount: number = 0;
+  public totalAmount(basket: Observable<Basket>): string {
+    let totalAmount = 0;
     basket.map(book => {
       if (book['price']) {
         totalAmount = totalAmount +  parseFloat(book['price']);
       }
     });
-    return totalAmount;
+    return totalAmount.toFixed(2);
   }
 
   public deleteFromBasket(bookId: string): void {
     this.http.deleteBookFromBasket(bookId).subscribe(
       () => {
-        this.http.getUserBasket(BibliothecaConstants.BASKET)
-          .subscribe( (res: any) => {
-            this.myBasket = res[ 'rows' ];
-          });
+        this.showTip = true;
+        setTimeout( () => this.showTip = false, 3500 );
+        this.http.getUserBasket(BibliothecaConstants.BASKET).subscribe( (res: any) => {
+          this.myBasket = res;
+          this.total = this.totalAmount(this.myBasket['rows']);
+        });
       },
       (err) => { throw new Error(err); });
   }

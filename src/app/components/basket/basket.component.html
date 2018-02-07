@@ -1,3 +1,6 @@
 <button class="btn btn-block btn-primary" (click)="addToBask(book)">
-  <i class="demo-icon icon-plus-squared"></i> Add to basket
+  <i class="demo-icon icon-plus-squared"></i> Add to cart
 </button>
+
+<app-tipster [config]="tipsterConfig" *ngIf="showTip"></app-tipster>
+

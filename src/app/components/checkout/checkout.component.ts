@@ -11,10 +11,21 @@ export class CheckoutComponent implements OnInit {
   public numberOfBooks: number;
   @Input()
   public totalAmount: number;
+  public paymentType: string;
+  public paymentNotSelected: boolean = false;
 
-  constructor() { }
+  constructor() {
+    this.paymentType = '0';
+  }
 
   ngOnInit() {
+  }
+
+  public doCheckout(): void {
+    if (this.paymentType === '0') {
+      this.paymentNotSelected = true;
+    }
+    this.paymentNotSelected = false;
   }
 
 }

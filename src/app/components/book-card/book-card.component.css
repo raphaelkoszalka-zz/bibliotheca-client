@@ -4,4 +4,9 @@
 }
 .card  {
   height: 240px;
+  position: relative;
+}
+.button-row {
+  position: absolute;
+  bottom: 5px;
 }

@@ -1,4 +1,3 @@
-<div class="alert alert-primary">
-  <strong>Pro tip!</strong> <br />
-  Just start typing and press 'enter' to achieve knowledge!
+<div *ngIf="config" class="alert {{config.class}}">
+  <strong>{{config.title}}</strong> <br /> {{config.message}}
 </div>

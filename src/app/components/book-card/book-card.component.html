@@ -6,8 +6,19 @@
         <img src="{{book.volumeInfo.imageLinks.thumbnail}}" class="img-thumbnail"  alt="">
       </div>
       <div class="col-md-9">
-        <p class="card-text">{{book.volumeInfo.description | substr}}</p>
-        <app-basket [book]="book"></app-basket>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="card-text">{{book.volumeInfo.description | substr}}</p>
+          </div>
+        </div>
+        <div class="row button-row">
+          <div class="col-md-6">
+            <app-book  [book]="book"></app-book>
+          </div>
+          <div class="col-md-6">
+            <app-basket  [book]="book"></app-basket>
+          </div>
+        </div>
       </div>
     </div>
   </div>

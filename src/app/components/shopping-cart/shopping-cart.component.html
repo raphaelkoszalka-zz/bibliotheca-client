@@ -35,4 +35,5 @@
       <app-checkout [numberOfBooks]="myBasket['count']" [totalAmount]="total"></app-checkout>
     </div>
   </div>
+  <app-tipster [config]="tipsterConfig" *ngIf="showTip"></app-tipster>
 </section>

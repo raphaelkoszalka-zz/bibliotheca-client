@@ -1,7 +1,21 @@
-.alert {
+.alert-home {
   z-index: 12000;
   position: fixed;
   bottom: 85px;
   right: 50%;
   margin-right: -216px;
+}
+
+.alert-success {
+  position: fixed;
+  z-index: 11000;
+  right: 25px;
+  top:  85px;
+}
+
+.alert-danger {
+  position: fixed;
+  z-index: 11000;
+  right: 25px;
+  top:  85px;
 }
