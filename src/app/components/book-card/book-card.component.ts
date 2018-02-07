@@ -1,4 +1,5 @@
 import { Component,  Input } from '@angular/core';
+import { DeviceDetectorService } from '../../services/device-detector.service';
 
 @Component({
   selector: 'app-book-card',
@@ -9,8 +10,12 @@ export class BookCardComponent  {
 
   @Input()
   public book: object;
+  public deviceIsMobile: boolean = false;
+  public user: string = localStorage.getItem('TOKEN');
 
-  constructor() { }
+  constructor(private deviceDetector: DeviceDetectorService) {
+    this.deviceIsMobile = deviceDetector.mobileAndTabletcheck();
+  }
 
 
 }

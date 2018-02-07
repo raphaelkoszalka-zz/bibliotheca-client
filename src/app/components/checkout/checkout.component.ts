@@ -28,4 +28,5 @@ export class CheckoutComponent implements OnInit {
     this.paymentNotSelected = false;
   }
 
+
 }

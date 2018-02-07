@@ -1,7 +1,20 @@
 <section>
-  <div class="search-bar">
+  <div class="search-bar" *ngIf="!deviceIsMobile">
     <div class="col-md-10 offset-1 search-bar-input">
       <h4><i class="icon-search"></i> {{searchParameter}} </h4> <h4 class="dash_blink"> __</h4>
+    </div>
+    <div class="col-md-12" *ngIf="deviceIsMobile">
+      <div class="form-group">
+        <select class="custom-select" [(ngModel)]="categoryType" (ngModelChange)="navigateToCategory (categoryType)">
+          <option selected="" value="0">Select a category</option>
+          <option value="Programming">Programming</option>
+          <option value="History">History</option>
+          <option value="Philosophy">Philosophy</option>
+          <option value="Science">Science</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Politics">Politics</option>
+        </select>
+      </div>
     </div>
   </div>
   <div class="clearfix"></div>

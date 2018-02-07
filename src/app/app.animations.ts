@@ -4,10 +4,10 @@ export const MenuSlideAnimation = trigger(
   'menuSlide', [
     transition(':enter', [
       style({ height: '0%', opacity: '1' }),
-      animate('300ms', style({height: '165px', opacity: '1' }))
+      animate('300ms', style({height: '115px', opacity: '1' }))
     ]),
     transition(':leave', [
-      style({ height: '165px', opacity: '1'  }),
+      style({ height: '115px', opacity: '1'  }),
       animate('300ms', style({height: '0px' , opacity: '1' }))
     ])
   ]

@@ -15,6 +15,11 @@ a {
   background-color: #1B2A49;
   cursor: pointer;
 }
+@media (max-width: 500px) {
+  .auth-user {
+    width: 85px;
+  }
+}
 #auth-user-avatar {
   border: 2px solid #efefef;
   max-height: 50px;
@@ -26,7 +31,7 @@ a {
 #auth-user-menu {
   position: fixed;
   right: 0;
-  height: 165px;
+  height: 115px;
   top: 74px;
   background-color: #1B2A49;
   z-index: 8000;

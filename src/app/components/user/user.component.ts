@@ -24,9 +24,9 @@ export class UserComponent implements OnInit {
 
   constructor(
     private broadcaster: BroadcasterService,
+    private router: Router,
     private authService: AuthService,
     private http: UserService,
-    private router: Router
   ) {}
 
   ngOnInit() {
@@ -35,11 +35,7 @@ export class UserComponent implements OnInit {
   }
 
   @HostListener('window:keyup', ['$event']) keyEvent(event: KeyboardEvent) {
-    if (event.keyCode === 27) { this.userModalLoginVisibility(true); }
-  }
-
-  public facebookLogin(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    if (event.keyCode === 27) { this.userModalLoginVisibility(false); }
   }
 
   public googleLogin(): void {
@@ -63,6 +59,7 @@ export class UserComponent implements OnInit {
     this.userModalLoginVisibility(false);
     localStorage.setItem('TOKEN', user['token']);
     localStorage.setItem('USER_ID', user['user']['id']);
+    this.router.navigate(['home']);
   }
 
   private getAccessToken(user: SocialUser) : void {

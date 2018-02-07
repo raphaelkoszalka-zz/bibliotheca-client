@@ -17,7 +17,7 @@ export class BookListResolver implements Resolve<any> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<object>>  {
     const HOME_QUERIES: Array<object> = [
       { key: 'q', value: route['params']['category']},
-      { key: 'maxResults', value: 12},
+      { key: 'maxResults', value: 40},
       { key: 'filter', value: 'ebooks' }
     ];
     return Observable.create((observer: Observer<any>) => {

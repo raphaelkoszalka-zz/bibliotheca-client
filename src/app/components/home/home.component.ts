@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { TypingService } from '../../services/typing.service';
+import { DeviceDetectorService } from '../../services/device-detector.service';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,8 @@ export class HomeComponent implements OnInit {
   public backgroundStyles: object;
   public viewReady: boolean = false;
   public searchParameter: string = '';
+  public deviceIsMobile: boolean = false;
+  public categoryType: string;
   public tipsterConfig: object = {
     action : 'home',
     class: 'alert-primary alert-home',
@@ -20,7 +23,14 @@ export class HomeComponent implements OnInit {
     message: 'Just start typing and press \'enter\' to achieve knowledge!'
   };
 
-  constructor(private typing: TypingService) {}
+  constructor(
+    private typing: TypingService,
+    private deviceDetector: DeviceDetectorService,
+    private router: Router
+  ) {
+    this.deviceIsMobile = deviceDetector.mobileAndTabletcheck();
+    this.categoryType = '0';
+  }
 
   @HostListener('window:keyup', ['$event']) keyEvent(event: KeyboardEvent) {
     this.searchParameter = this.typing.keyPressed(event, this.searchParameter);
@@ -55,6 +65,10 @@ export class HomeComponent implements OnInit {
     setInterval(() =>
         this.backgroundStyles['background-image'] = 'url(' + coverMap[HomeComponent.getRandomInt(0,6)] + ')'
       , 30000);
+  }
+
+  public navigateToCategory(category): void {
+    this.router.navigate(['books', category]);
   }
 
   private static getRandomInt(min: number, max: number): number {

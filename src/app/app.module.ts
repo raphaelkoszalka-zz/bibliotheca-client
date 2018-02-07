@@ -33,6 +33,7 @@ import { ShoppingCartResolver } from './components/shopping-cart/shopping-cart.r
 import { PricePipe } from './pipes/price.pipe';
 import { TypingService } from './services/typing.service';
 import { FormsModule } from '@angular/forms';
+import { DeviceDetectorService } from './services/device-detector.service';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { FormsModule } from '@angular/forms';
     BookListResolver,
     ShoppingCartResolver,
     BasketService,
-    TypingService
+    TypingService,
+    DeviceDetectorService
   ],
   bootstrap: [AppComponent]
 })

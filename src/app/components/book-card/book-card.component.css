@@ -6,6 +6,11 @@
   height: 240px;
   position: relative;
 }
+@media (max-width: 500px) {
+  .card {
+    height: 350px;
+  }
+}
 .button-row {
   position: absolute;
   bottom: 5px;
