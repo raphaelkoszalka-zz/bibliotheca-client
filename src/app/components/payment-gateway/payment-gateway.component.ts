@@ -39,7 +39,11 @@ export class PaymentGatewayComponent {
     }
     // payment type equal to invoice
     // @todo: node pdf generator @ backend
-    alert('Will post to PDF Invoice generator API endpoint.');
+    alert('Will POST to PDF Invoice generator API endpoint [ >> /api/invoice  << ] ' +
+      'is already generating PDF from HTML, but i want to parse POST payload ' +
+      'and then generate a proper invoice file.' +
+      ' [ >> PDF GENERATED: << ] https://bibliotheca.raphael.website/invoices/pdf_from_api.pdf');
+    window.open(' https://bibliotheca.raphael.website/invoices/pdf_from_api.pdf');
   }
 
   public userModalLoginVisibility(isVisible: boolean): void {

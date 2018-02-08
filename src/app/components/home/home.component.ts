@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
       'background-size': 'cover',
       '-webkit-background-size': 'cover',
       'background-position': 'center center',
-      'background-color': '#4e5d7c'
+      'background-color': 'lightblue'
     };
 
     // better fluid, better loader than image loading in blocks
