@@ -43,7 +43,8 @@ export class BasketComponent implements OnInit {
       book['volumeInfo']['subtitle'] || null,
       book['selfLink'] || null,
       book['volumeInfo']['imageLinks']['smallThumbnail'] || null,
-      price || null
+      price || null,
+      book['id'],
     );
 
     this.http.postUserBasket(basket).subscribe( (res) => {

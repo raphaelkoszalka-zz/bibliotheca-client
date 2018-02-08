@@ -9,15 +9,21 @@
         <div class="shop-cart">
           <div class="row">
             <div class="col-sm-1">
-              <img src="{{book.thumbnail}}" style="max-height: 61px;" class="img-thumbnail" alt="{{book.title}}" />
+              <img src="{{book.thumbnail}}"
+                   style="max-height: 61px;" class="img-thumbnail" alt="{{book.title}}" />
             </div>
-            <div class="col-sm-8 info" style="display: inline;">
+            <div class="col-sm-4 info" style="display: inline;">
               <h6 class="card-title">{{book.title}}</h6>
               <p class="card-text">{{book.subtitle}}</p>
             </div>
-            <div class="col-sm-3 text-right">
+            <div class="col-sm-7 text-right">
               <h6 class="card-title text-right options">
-                <button class="btn btn-info">
+                <a href="/book/{{book.googleId}}">
+                  <button class="btn btn-info">
+                    Detail
+                  </button>
+                </a>
+                <button class="btn btn-primary">
                   $ {{book.price | price}}
                 </button>
                 <button class="btn btn-danger" (click)="deleteFromBasket(book.id)">

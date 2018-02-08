@@ -12,23 +12,21 @@ import { ActivatedRoute } from '@angular/router';
 export class BookComponent implements OnInit{
 
   @Input()
-  public book;
+  public book: object;
   public paymentType: string;
   public paymentNotSelected: boolean;
 
   constructor(private route: ActivatedRoute) {
-    route.data.pluck('book').subscribe( (book: Observable<Array<object>>) => this.book = book );
+    route.data.pluck('book').subscribe( (book: object) => this.book = book );
     this.paymentType = '0';
   }
 
   ngOnInit() {
     console.log('BookComponent instantiated');
-    console.log(this.book);
   }
 
 
   public doCheckout(): void {
-
   }
 
 }

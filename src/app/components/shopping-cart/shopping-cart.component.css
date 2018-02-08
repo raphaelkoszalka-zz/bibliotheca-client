@@ -8,6 +8,9 @@ section {
 .btn {
   padding-left: 10px;
 }
+.btn-primary {
+  width: 70px;
+}
 .book-padding {
   padding-top: 10px;
 }

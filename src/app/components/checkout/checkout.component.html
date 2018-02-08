@@ -17,15 +17,7 @@
           </li>
         </ul>
         <hr>
-        <div class="form-group">
-          <select class="custom-select" [(ngModel)]="paymentType">
-            <option selected="" value="0">Payment Type</option>
-            <option value="1">Credit Card</option>
-            <option value="2">Ticket</option>
-          </select>
-        </div>
-        <p class="text-danger text-center" *ngIf="paymentNotSelected">You <strong>must</strong> select a payment type.</p>
-        <button class="btn btn-block btn-primary" (click)="doCheckout()">Checkout</button>
+        <app-payment-gateway [total]="totalAmount"></app-payment-gateway>
       </div>
     </div>
   </div>

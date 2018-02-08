@@ -16,7 +16,7 @@ export class BookResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<object>>  {
     return Observable.create((observer: Observer<any>) => {
-      this.http.get(BibliothecaConstants.GOOGLE_SINGLE_VOLUME + route['params']['bookId'] + this.queryBuilder.builder([], true))
+      this.http.get(BibliothecaConstants.GOOGLE_SINGLE_VOLUME + route['params']['bookId'])
         .subscribe(
           (res) => { observer.next(res); observer.complete(); },
           (err) => { throw new Error(err); }

@@ -1,27 +1,17 @@
 <section>
   <div class="col-md-12">
     <div class="card border-secondary">
-      <div class="card-header">{{book?.volumeInfo?.title}}</div>
+      <div class="card-header" [innerHTML]="book['volumeInfo']['title']"></div>
       <div class="card-body text-secondary">
         <div class="col-md-12">
           <hr>
           <div class="text-center">
-            <img src="{{book?.volumeInfo?.imageLinks.thumbnail}}" alt="">
+            <img [src]="book['volumeInfo']['imageLinks']['thumbnail']" alt="">
           </div>
           <hr>
-          <p>{{book?.volumeInfo?.description}}</p>
+          <p [innerHTML]="book['volumeInfo']['description']"></p>
           <hr>
-          <div class="form-group">
-            <hr>
-            <select class="custom-select" [(ngModel)]="paymentType">
-              <option selected="" value="0">Payment Type</option>
-              <option value="1">Credit Card</option>
-              <option value="2">Ticket</option>
-            </select>
-          </div>
-          <p class="text-danger text-center" *ngIf="paymentNotSelected">You <strong>must</strong> select a payment type.</p>
-          <button class="btn btn-block btn-primary" (click)="doCheckout()">Buy It</button>
-          <hr>
+          <app-payment-gateway></app-payment-gateway>
         </div>
       </div>
     </div>

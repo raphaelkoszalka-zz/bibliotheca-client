@@ -35,6 +35,7 @@ import { TypingService } from './services/typing.service';
 import { FormsModule } from '@angular/forms';
 import { DeviceDetectorService } from './services/device-detector.service';
 import { BookResolver } from './components/book/book.resolver';
+import { PaymentGatewayComponent } from './components/payment-gateway/payment-gateway.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { BookResolver } from './components/book/book.resolver';
     SubStringPipe,
     BasketComponent,
     ModalComponent,
-    PricePipe
+    PricePipe,
+    PaymentGatewayComponent
   ],
   imports: [
     BrowserModule,

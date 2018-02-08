@@ -6,6 +6,7 @@ import { DeviceDetectorService } from '../../services/device-detector.service';
   templateUrl: './book-card.component.html',
   styleUrls: ['./book-card.component.css']
 })
+
 export class BookCardComponent  {
 
   @Input()
@@ -16,6 +17,5 @@ export class BookCardComponent  {
   constructor(private deviceDetector: DeviceDetectorService) {
     this.deviceIsMobile = deviceDetector.mobileAndTabletcheck();
   }
-
 
 }

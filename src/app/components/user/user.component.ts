@@ -20,6 +20,7 @@ export class UserComponent implements OnInit {
 
   public socialUser: SocialUser;
   public authenticatedUser: AuthenticatedUser;
+  // @todo: generic modal component
   public modalVisible: boolean = false;
 
   constructor(
@@ -59,7 +60,6 @@ export class UserComponent implements OnInit {
     this.userModalLoginVisibility(false);
     localStorage.setItem('TOKEN', user['token']);
     localStorage.setItem('USER_ID', user['user']['id']);
-    this.router.navigate(['home']);
   }
 
   private getAccessToken(user: SocialUser) : void {
