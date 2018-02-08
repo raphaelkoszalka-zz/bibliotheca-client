@@ -61,10 +61,12 @@ export class HomeComponent implements OnInit {
     // smaller images would be even better :/ haha
     setTimeout( () => this.viewReady = true, 300);
 
-    // change cover image every minute
-    setInterval(() =>
-        this.backgroundStyles['background-image'] = 'url(' + coverMap[HomeComponent.getRandomInt(0,6)] + ')'
-      , 30000);
+    // change cover image every 30 seconds (to mars?!?) if not mobile (save mobile data plans)
+    if (!this.deviceIsMobile) {
+      setInterval(() =>
+          this.backgroundStyles['background-image'] = 'url(' + coverMap[HomeComponent.getRandomInt(0,6)] + ')'
+        , 30000);
+    }
   }
 
   public navigateToCategory(category): void {

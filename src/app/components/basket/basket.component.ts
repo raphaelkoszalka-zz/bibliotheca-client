@@ -16,7 +16,7 @@ export class BasketComponent implements OnInit {
   @Input()
   public book:  Observable<object>;
   public showTip: boolean = false;
-  public user: string = localStorage.getItem('TOKEN');
+  public user: string = localStorage.getItem('TOLKIEN');
   public tipsterConfig: object = {
     action : 'post',
     class: 'alert-success',

@@ -12,7 +12,7 @@ export class BookCardComponent  {
   @Input()
   public book: object;
   public deviceIsMobile: boolean = false;
-  public user: string = localStorage.getItem('TOKEN');
+  public user: string = localStorage.getItem('TOLKIEN');
 
   constructor(private deviceDetector: DeviceDetectorService) {
     this.deviceIsMobile = deviceDetector.mobileAndTabletcheck();
