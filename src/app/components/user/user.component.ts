@@ -58,6 +58,7 @@ export class UserComponent implements OnInit {
   private userLoggedIn(user): void {
     this.authenticatedUser = user;
     this.userModalLoginVisibility(false);
+    this.broadcaster.broadcast('USER_LOGGED_IN');
     // pun intended ;)
     localStorage.setItem('TOLKIEN', user['token']);
     localStorage.setItem('USER_ID', user['user']['id']);

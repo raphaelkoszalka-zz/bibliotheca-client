@@ -9,6 +9,8 @@
             <img [src]="book['volumeInfo']['imageLinks']['thumbnail']" alt="">
           </div>
           <hr>
+          <app-basket *ngIf="user" [book]="book"></app-basket>
+          <hr>
           <p [innerHTML]="book['volumeInfo']['description']"></p>
           <hr>
           <app-payment-gateway></app-payment-gateway>

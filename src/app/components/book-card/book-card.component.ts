@@ -1,5 +1,6 @@
-import { Component,  Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DeviceDetectorService } from '../../services/device-detector.service';
+import { BroadcasterService } from '../../services/broadcaster.service';
 
 @Component({
   selector: 'app-book-card',
@@ -7,15 +8,16 @@ import { DeviceDetectorService } from '../../services/device-detector.service';
   styleUrls: ['./book-card.component.css']
 })
 
-export class BookCardComponent  {
+export class BookCardComponent {
 
   @Input()
   public book: object;
   public deviceIsMobile: boolean = false;
   public user: string = localStorage.getItem('TOLKIEN');
 
-  constructor(private deviceDetector: DeviceDetectorService) {
+  constructor(private deviceDetector: DeviceDetectorService, private broadcaster: BroadcasterService) {
     this.deviceIsMobile = deviceDetector.mobileAndTabletcheck();
   }
+
 
 }
