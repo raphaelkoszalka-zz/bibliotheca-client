@@ -25,15 +25,21 @@ export class PaymentGatewayComponent {
   }
 
   public doCheckout(): void {
+    // payment type not selected
     if (this.paymentType === '0') {
-      //@ todo: validation on credit card
       this.paymentNotSelected = true;
       return;
     }
-    if (this.paymentType === '1') {
-      this.modalVisible = true;
-    }
     this.paymentNotSelected = false;
+    // payment type equal to credit card
+    if (this.paymentType === '1') {
+      //@ todo: validation on credit card
+      this.modalVisible = true;
+      return;
+    }
+    // payment type equal to invoice
+    // @todo: node pdf generator @ backend
+    alert('Will post to PDF Invoice generator API endpoint.');
   }
 
   public userModalLoginVisibility(isVisible: boolean): void {
