@@ -1,5 +1,5 @@
 # Bibliotheca
-https://bibliotheca.raphael.webiste
+https://bibliotheca.raphael.website
 
 ## how to
 
