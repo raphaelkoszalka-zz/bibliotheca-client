@@ -5,3 +5,10 @@
   display: block;
   top: 75px;
 }
+@media (max-width: 700px) {
+  .modal-body {
+    margin-top: 52px;
+    max-height: 430px;
+    overflow-y: scroll;
+  }
+}
