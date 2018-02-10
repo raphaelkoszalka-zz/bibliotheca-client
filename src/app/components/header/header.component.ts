@@ -6,13 +6,8 @@ import { BroadcasterService } from '../../services/broadcaster.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
 
-  constructor(private broadcaster: BroadcasterService) { }
-
-  ngOnInit() {
-
-  }
-
+  constructor() { }
 
 }

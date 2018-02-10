@@ -19,5 +19,4 @@ export class BookCardComponent {
     this.deviceIsMobile = deviceDetector.mobileAndTabletcheck();
   }
 
-
 }

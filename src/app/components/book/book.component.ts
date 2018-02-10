@@ -30,8 +30,4 @@ export class BookComponent implements OnInit{
       });
   }
 
-
-  public doCheckout(): void {
-  }
-
 }

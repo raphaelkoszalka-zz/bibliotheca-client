@@ -10,7 +10,7 @@ import { DeviceDetectorService } from '../../services/device-detector.service';
   styleUrls: ['./user-authenticated.component.css'],
   animations: [FadeAnimation, MenuSlideAnimation]
 })
-export class UserAuthenticatedComponent implements OnInit {
+export class UserAuthenticatedComponent {
 
   @Input()
   authenticatedUser: AuthenticatedUser;
@@ -22,8 +22,6 @@ export class UserAuthenticatedComponent implements OnInit {
     private broadcaster: BroadcasterService) {
     this.deviceIsMobile = deviceDetector.mobileAndTabletcheck();
   }
-
-  ngOnInit() {}
 
   public userMenuVisibility(isVisible: boolean): void {
     this.userMenuVisible = isVisible;

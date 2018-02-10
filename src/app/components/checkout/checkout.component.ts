@@ -12,8 +12,6 @@ export class CheckoutComponent  {
   @Input()
   public totalAmount: number;
 
-  constructor() {
-  }
-
+  constructor() {}
 
 }

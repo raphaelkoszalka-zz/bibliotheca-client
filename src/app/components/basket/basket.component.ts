@@ -11,7 +11,7 @@ import { FadeAnimation } from '../../app.animations';
   animations: [FadeAnimation]
 })
 
-export class BasketComponent implements OnInit {
+export class BasketComponent  {
 
   @Input()
   public book:  Observable<object>;
@@ -24,12 +24,7 @@ export class BasketComponent implements OnInit {
     message: 'Book added to your cart with success!'
   };
 
-
-  constructor(private http: BasketService) {
-  }
-
-  ngOnInit() {
-  }
+  constructor(private http: BasketService) {}
 
   public addToBask(book: Observable<object>): void {
 

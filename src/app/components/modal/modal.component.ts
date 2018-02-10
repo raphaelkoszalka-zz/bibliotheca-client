@@ -5,11 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.css']
 })
-export class ModalComponent implements OnInit {
+
+// @todo: implement generic modal here
+export class ModalComponent  {
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
