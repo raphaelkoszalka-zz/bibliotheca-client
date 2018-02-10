@@ -18,7 +18,8 @@ export class AuthGuard implements CanActivate {
       this.router.navigate(['home']);
       return false;
     }
-
+    
+    // @todo: just post JWT to /api/auth/jwt to validate before returning true to route access
     console.log('- user authenticated, allow access to shopping cart');
     return true;
   }
