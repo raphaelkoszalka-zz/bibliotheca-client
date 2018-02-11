@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Basket } from '../basket/basket';
 
 @Component({
   selector: 'app-checkout',
@@ -8,9 +10,9 @@ import { Component, Input } from '@angular/core';
 export class CheckoutComponent  {
 
   @Input()
-  public numberOfBooks: number;
-  @Input()
   public totalAmount: number;
+  @Input()
+  public basket: Observable<Basket[]>;
 
   constructor() {}
 

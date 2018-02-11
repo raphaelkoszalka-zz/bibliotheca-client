@@ -38,7 +38,7 @@
       <hr>
     </div>
     <div class="col-md-3">
-      <app-checkout [numberOfBooks]="myBasket['count']" [totalAmount]="total"></app-checkout>
+      <app-checkout [basket]="myBasket" [totalAmount]="total"></app-checkout>
     </div>
   </div>
   <app-tipster [config]="tipsterConfig" *ngIf="showTip"></app-tipster>

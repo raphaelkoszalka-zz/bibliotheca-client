@@ -1,5 +1,3 @@
-import { AuthenticatedUser } from '../user-authenticated/user-authenticated';
-
 export class Basket {
 
   title: string|null;

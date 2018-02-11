@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { AppRoutingModule } from './app.routes.mod';
@@ -36,6 +36,8 @@ import { FormsModule } from '@angular/forms';
 import { DeviceDetectorService } from './services/device-detector.service';
 import { BookResolver } from './components/book/book.resolver';
 import { PaymentGatewayComponent } from './components/payment-gateway/payment-gateway.component';
+import { PaymentGatewayService } from './components/payment-gateway/payment-gateway.service';
+import { CreditCardValidationService } from './services/credit-card-validation.service';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { PaymentGatewayComponent } from './components/payment-gateway/payment-ga
     BasketService,
     TypingService,
     DeviceDetectorService,
-    BookResolver
+    BookResolver,
+    PaymentGatewayService,
+    CreditCardValidationService
   ],
   bootstrap: [AppComponent]
 })

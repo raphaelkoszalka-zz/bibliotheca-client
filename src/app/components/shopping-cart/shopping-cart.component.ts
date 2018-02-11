@@ -11,9 +11,9 @@ import { BibliothecaConstants } from '../../app.constants';
   styleUrls: ['./shopping-cart.component.css']
 })
 
-export class ShoppingCartComponent implements OnInit{
+export class ShoppingCartComponent implements OnInit {
 
-  public myBasket: Observable<Array<Basket>>;
+  public myBasket: Observable<Basket[]>;
   public total: string;
   public showTip: boolean = false;
   public tipsterConfig: object = {
@@ -28,7 +28,7 @@ export class ShoppingCartComponent implements OnInit{
     private route: ActivatedRoute,
     private http: BasketService
   ) {
-    route.data.pluck('basket').subscribe( (basket: Observable<Array<Basket>>) => this.myBasket = basket );
+    route.data.pluck('basket').subscribe( (basket: Observable<Basket[]>) => this.myBasket = basket );
     router.routeReuseStrategy.shouldReuseRoute = function(){ return false; }
   }
 
@@ -39,9 +39,7 @@ export class ShoppingCartComponent implements OnInit{
   public totalAmount(basket: Observable<Basket>): string {
     let totalAmount = 0;
     basket.map(book => {
-      if (book['price']) {
-        totalAmount = totalAmount +  parseFloat(book['price']);
-      }
+      if (book['price']) { totalAmount = totalAmount +  parseFloat(book['price']); }
     });
     return totalAmount.toFixed(2);
   }

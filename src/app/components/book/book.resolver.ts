@@ -12,11 +12,9 @@ export class BookResolver implements Resolve<any> {
 
   constructor(private http: GenericHttpService, private queryBuilder: QueryBuilderService) {}
 
-
-
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<object>>  {
     return Observable.create((observer: Observer<any>) => {
-      this.http.get(BibliothecaConstants.GOOGLE_SINGLE_VOLUME + route['params']['bookId'])
+      this.http.get(BibliothecaConstants.GOOGLE_BOOKS_HOME + '/' + route['params']['bookId'])
         .subscribe(
           (res) => { observer.next(res); observer.complete(); },
           (err) => { throw new Error(err); }
