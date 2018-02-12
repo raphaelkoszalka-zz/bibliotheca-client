@@ -1,0 +1,19 @@
+{
+  "HOME": {
+    "I_WOULD_LIKE": "Eu gostaria de ",
+    "LEARN_MORE": "aprender mais",
+    "ABOUT": "sobre",
+    "SELECT_A_CATEGORY": "Selecione uma categoria",
+    "PROGRAMMING": "Programação",
+    "HISTORY": "História",
+    "PHILOSOPHY": "Filosofia",
+    "SCIENCE": "Ciência",
+    "MATHEMATICS": "Matemática",
+    "POLITICS": "Politica",
+    "TIPSTER_TITLE": "Dica de profissa!",
+    "TIPSTER_MESSAGE": "Apenas comece a digitar e aperte 'enter' para atingir o conhecimento!"
+  },
+  "FOOTER" : {
+    "LANGUAGE_SELECT" : "Selecione um idioma"
+  }
+}

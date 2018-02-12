@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { TypingService } from '../../services/typing.service';
 import { DeviceDetectorService } from '../../services/device-detector.service';
+import { TranslateService } from '@ngx-translate/core';
+import {BroadcasterService} from '../../services/broadcaster.service';
 
 @Component({
   selector: 'app-home',
@@ -16,20 +18,22 @@ export class HomeComponent implements OnInit {
   public searchParameter: string = '';
   public deviceIsMobile: boolean = false;
   public categoryType: string;
-  public tipsterConfig: object = {
-    action : 'home',
-    class: 'alert-primary alert-home',
-    title: 'Pro Tip!',
-    message: 'Just start typing and press \'enter\' to achieve knowledge!'
-  };
+  public tipsterConfig: object;
 
   constructor(
     private typing: TypingService,
     private deviceDetector: DeviceDetectorService,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService,
+    private broadcaster: BroadcasterService
   ) {
     this.deviceIsMobile = deviceDetector.mobileAndTabletcheck();
     this.categoryType = '0';
+    this.setLanguage('en');
+  }
+
+  private static getRandomInt(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   @HostListener('window:keyup', ['$event']) keyEvent(event: KeyboardEvent) {
@@ -64,17 +68,25 @@ export class HomeComponent implements OnInit {
     // change cover image every 30 seconds (to mars?!?) if not mobile (save mobile data plans)
     if (!this.deviceIsMobile) {
       setInterval(() =>
-          this.backgroundStyles['background-image'] = 'url(' + coverMap[HomeComponent.getRandomInt(0,6)] + ')'
+          this.backgroundStyles['background-image'] = 'url(' + coverMap[HomeComponent.getRandomInt(0, 6)] + ')'
         , 30000);
     }
+    this.broadcaster.on<string>('LANGUAGE_CHANGED').subscribe( lang => this.setLanguage(lang) );
   }
 
   public navigateToCategory(category): void {
     this.router.navigate(['books', category]);
   }
 
-  private static getRandomInt(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  private setLanguage(lang): void {
+    this.translate.setDefaultLang(lang);
+    this.translate.use(lang);
+    this.tipsterConfig = {
+      action : 'home',
+      class: 'alert-primary alert-home'
+    };
+    this.translate.get('HOME.TIPSTER_TITLE').subscribe(res => this.tipsterConfig['title'] = res);
+    this.translate.get('HOME.TIPSTER_MESSAGE').subscribe(res => this.tipsterConfig['message'] = res);
   }
 
 }

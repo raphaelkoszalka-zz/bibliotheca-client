@@ -1,1 +1,15 @@
-<footer></footer>
+<footer>
+  <div id="languageSelect">
+    <select
+      class="custom-select"
+      name="languageSelectior"
+      id="languageSelectior"
+      [(ngModel)]="languageSelector"
+      (ngModelChange)="languageSelected(languageSelector)"
+    >
+      <option value="0">{{ 'FOOTER.LANGUAGE_SELECT' | translate}}</option>
+      <option value="en">English</option>
+      <option value="pt">Português</option>
+    </select>
+  </div>
+</footer>

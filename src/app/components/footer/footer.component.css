@@ -1,8 +1,14 @@
 footer {
   position: fixed;
   bottom: 0;
-  height: 30px;
+  height: 35px;
   width: 100%;
   background-color: #22355C;
   z-index: 9000;
+}
+#languageSelect {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 25%;
 }
