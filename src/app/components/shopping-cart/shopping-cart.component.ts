@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { BibliothecaConstants } from '../../app.constants';
 import {QueryBuilderService} from '../../services/query-builder.service';
+import { pluck } from 'rxjs/operator/pluck';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -19,19 +21,23 @@ export class ShoppingCartComponent implements OnInit {
   public showTip: boolean = false;
   public tipsterConfig: object = {
     action : 'delete',
-    class: 'alert-danger',
-    title: 'Removed',
-    message: 'Book removed from your cart with success.'
+    class: 'alert-danger'
   };
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private http: BasketService,
-    private queryBuilder: QueryBuilderService
+    private queryBuilder: QueryBuilderService,
+    private translate: TranslateService
   ) {
-    route.data.pluck('basket').subscribe( (basket: Observable<Basket[]>) => this.myBasket = basket );
-    router.routeReuseStrategy.shouldReuseRoute = function(){ return false; }
+    this.myBasket = route['data']['_value']['basket'];
+    router.routeReuseStrategy.shouldReuseRoute = function(){ return false; };
+    let lang = 'en';
+    if (localStorage.getItem('LANGUAGE')) {
+      lang = localStorage.getItem('LANGUAGE');
+    }
+    this.setLanguage(lang);
   }
 
   ngOnInit() {
@@ -58,6 +64,11 @@ export class ShoppingCartComponent implements OnInit {
         });
       },
       (err) => { throw new Error(err); });
+  }
+
+  private setLanguage(lang): void {
+    this.translate.get('SHOPPING_CART.TIPSTER_TITLE').subscribe(res => this.tipsterConfig['title'] = res);
+    this.translate.get('SHOPPING_CART.TIPSTER_MESSAGE').subscribe(res => this.tipsterConfig['message'] = res);
   }
 
 }

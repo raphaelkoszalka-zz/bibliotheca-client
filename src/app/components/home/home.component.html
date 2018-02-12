@@ -4,20 +4,22 @@
   <div class="section-overlay">
     <div class="input-area-wrapper text-center">
       <h1 class="text-center">
-        I would like to <br /> <strong>learn more</strong> about
+        {{ 'HOME.I_WOULD_LIKE' | translate }} <br />
+        <strong>{{ 'HOME.LEARN_MORE' | translate }}</strong>
+        {{ 'HOME.ABOUT' | translate }}
       </h1>
       <br />
       <h1 *ngIf="!deviceIsMobile"  class="input-area-blinking-dash dash_blink"> {{searchParameter}} _</h1>
       <div class="col-sm-12 col-md-4 offset-md-4">
         <div class="form-group">
           <select class="custom-select" [(ngModel)]="categoryType" (ngModelChange)="navigateToCategory (categoryType)">
-            <option selected="" value="0">Select a category</option>
-            <option value="Programming">Programming</option>
-            <option value="History">History</option>
-            <option value="Philosophy">Philosophy</option>
-            <option value="Science">Science</option>
-            <option value="Mathematics">Mathematics</option>
-            <option value="Politics">Politics</option>
+            <option selected="" value="0">{{ 'HOME.SELECT_A_CATEGORY' | translate }}</option>
+            <option value="{{ 'HOME.PROGRAMMING' | translate }}">{{ 'HOME.PROGRAMMING' | translate }}</option>
+            <option value="{{ 'HOME.HISTORY' | translate }}">{{ 'HOME.HISTORY' | translate }}</option>
+            <option value="{{ 'HOME.PHILOSOPHY' | translate }}">{{ 'HOME.PHILOSOPHY' | translate }}</option>
+            <option value="{{ 'HOME.SCIENCE' | translate }}">{{ 'HOME.SCIENCE' | translate }}</option>
+            <option value="{{ 'HOME.MATHEMATICS' | translate }}">{{ 'HOME.MATHEMATICS' | translate }}</option>
+            <option value="{{ 'HOME.POLITICS' | translate }}">{{ 'HOME.POLITICS' | translate }}</option>
           </select>
         </div>
       </div>

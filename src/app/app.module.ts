@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
+import { SocialLoginModule, AuthServiceConfig } from 'angularx-social-login';
 import { AppRoutingModule } from './app.routes.mod';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -39,6 +41,11 @@ import { PaymentGatewayComponent } from './components/payment-gateway/payment-ga
 import { PaymentGatewayService } from './components/payment-gateway/payment-gateway.service';
 import { CreditCardValidationService } from './services/credit-card-validation.service';
 
+// AoT requires an exported function for factories
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +72,14 @@ import { CreditCardValidationService } from './services/credit-card-validation.s
     BrowserAnimationsModule,
     SocialLoginModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     BroadcasterService,

@@ -1,13 +1,13 @@
 <div class="form-group">
   <hr>
   <select class="custom-select" [(ngModel)]="paymentType">
-    <option selected="" value="0">Payment Type</option>
-    <option value="1">Credit Card</option>
-    <option value="2">Ticket</option>
+    <option selected="" value="0">{{ 'CHECKOUT.PAYMENT_TYPE' | translate }}</option>
+    <option value="1">{{ 'CHECKOUT.CREDIT_CARD' | translate }}</option>
+    <option value="2">{{ 'CHECKOUT.INVOICE' | translate }}</option>
   </select>
 </div>
-<p class="text-danger text-center" *ngIf="paymentNotSelected">You <strong>must</strong> select a payment type.</p>
-<button class="btn btn-block btn-primary" (click)="doCheckout()">Buy It</button>
+<p class="text-danger text-center" *ngIf="paymentNotSelected">{{ 'CHECKOUT.ERROR' | translate }}</p>
+<button class="btn btn-block btn-primary" (click)="doCheckout()">{{ 'CHECKOUT.BUY_IT' | translate }}</button>
 <hr>
 
 <div *ngIf="modalVisible" [@fade]>
@@ -21,50 +21,49 @@
               <div id="pay-invoice" class="card">
                 <div class="card-body">
                   <div class="card-title">
-                    <h3 class="text-center">Pay Invoice</h3>
+                    <h3 class="text-center">{{ 'CHECKOUT.PAY' | translate }}</h3>
                   </div>
                   <hr>
                   <div class="form-group">
-                    <label for="cc-payment" class="control-label mb-1">Payment amount</label>
+                    <label for="cc-payment" class="control-label mb-1">{{ 'CHECKOUT.AMOUNT' | translate }}</label>
                     <input id="cc-payment" name="cc-payment" type="text" class="form-control" value="{{total}}" disabled>
                   </div>
                   <div class="form-group has-success">
-                    <label for="cc-name" class="control-label mb-1">Name on card</label>
+                    <label for="cc-name" class="control-label mb-1">{{ 'CHECKOUT.NAME_ON_CARD' | translate }}</label>
                     <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid" >
                   </div>
                   <div class="form-group">
-                    <label for="cc-number" class="control-label mb-1">Card number</label>
+                    <label for="cc-number" class="control-label mb-1">{{ 'CHECKOUT.CARD_NUMBER' | translate }}</label>
                     <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" value="">
                   </div>
                   <div class="row">
                     <div class="col-6">
                       <div class="form-group">
-                        <label for="cc-exp-month" class="control-label mb-1">Expiration</label>
+                        <label for="cc-exp-month" class="control-label mb-1">{{ 'CHECKOUT.EXPIRATION' | translate }}</label>
                         <div class="row">
                           <div class="col-md-6">
                             <input id="cc-exp-month" name="cc-exp" type="tel" class="form-control cc-exp" value="" placeholder="MM">
                           </div>
                           <div class="col-md-6">
-                            <input id="cc-exp-year" name="cc-exp" type="tel" class="form-control cc-exp" value="" placeholder="YY">
+                            <input id="cc-exp-year" name="cc-exp" type="tel" class="form-control cc-exp" value="" placeholder="{{ 'CHECKOUT.YY' | translate }}">
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="col-6">
-                      <label for="x_card_code" class="control-label mb-1">Security code</label>
+                      <label for="x_card_code" class="control-label mb-1">{{ 'CHECKOUT.SECURITY_CODE' | translate }}</label>
                       <div class="input-group">
-                        <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code" data-val-cc-cvc="Please enter a valid security code" autocomplete="off">
+                        <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" value="">
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="x_zip" class="control-label mb-1">Postal code</label>
-                    <input id="x_zip" name="x_zip" type="text" class="form-control" value="" data-val="true" data-val-required="Please enter the ZIP/Postal code" autocomplete="postal-code">
+                    <label for="x_zip" class="control-label mb-1">{{ 'CHECKOUT.POSTAL_CODE' | translate }}</label>
+                    <input id="x_zip" name="x_zip" type="text" class="form-control" value="">
                   </div>
                   <div>
                     <button id="payment-button" class="btn btn-lg btn-info btn-block" (click)="userModalLoginVisibility(false)">
-                      <span id="payment-button-amount">Pay $ {{total}}</span>
-                      <span id="payment-button-sending" style="display:none;">Sending…</span>
+                      <span id="payment-button-amount">{{ 'CHECKOUT.PAY' | translate }} {{ 'CHECKOUT.COIN' | translate }} {{total}}</span>
                     </button>
                   </div>
                 </div>

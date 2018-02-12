@@ -1,0 +1,65 @@
+{
+  "AUTH_USER": {
+    "HELLO": "Hello ",
+    "SHOPPING_CART": "Shopping Cart",
+    "LOGOUT": "Logout"
+  },
+  "BASKET": {
+    "BUY_IT": "Buy It",
+    "ADD_TO_CART": "Add to cart",
+    "TIPSTER_TITLE": "Well Done!",
+    "TIPSTER_MESSAGE": "Book added to shopping cart!"
+  },
+  "CARD": {
+    "DETAIL": "Detail"
+  },
+  "CHECKOUT": {
+    "BUY_IT": "Buy it",
+    "PAYMENT_TYPE": "Payment Type",
+    "CREDIT_CARD": "Credit Card",
+    "INVOICE": "Invoice",
+    "AMOUNT": "Payment Amount",
+    "NAME_ON_CARD": "Name on Card",
+    "CARD_NUMBER": "Card number",
+    "EXPIRATION": "Exiration",
+    "SECURITY_CODE": "Security Code",
+    "PAY": "Pay",
+    "ERROR": "You must select a payment type",
+    "POSTAL_CODE" : "Postal Code",
+    "CHECKOUT": "Checkout",
+    "TOTAL_BOOKS": "Total Books",
+    "TOTAL_PRICE": "Total Price",
+    "COIN": "U$$"
+  },
+  "FOOTER" : {
+    "LANGUAGE_SELECT" : "Select a language"
+  },
+  "HOME": {
+    "I_WOULD_LIKE": "I would like to ",
+    "LEARN_MORE": "learn more",
+    "ABOUT": "about",
+    "SELECT_A_CATEGORY": "Select a Category",
+    "PROGRAMMING": "Programming",
+    "HISTORY": "History",
+    "PHILOSOPHY": "Philosophy",
+    "SCIENCE": "Science",
+    "MATHEMATICS": "Mathematics",
+    "POLITICS": "Politics",
+    "TIPSTER_TITLE": "Pro Tip!",
+    "TIPSTER_MESSAGE": "Just start typing and press 'enter' to achieve knowledge!"
+  },
+  "SHOPPING_CART": {
+    "SHOPPING_CART" : "Shopping Cart",
+    "DETAIL" : "Detail",
+    "COIN": "U$$",
+    "TIPSTER_TITLE" : "Removed",
+    "TIPSTER_MESSAGE" : "Book removed from your cart with success."
+  },
+  "UNAUTHENTICATED_USER": {
+    "LOGIN": "Login",
+    "WELCOME" : "Welcome to Knowledge Bibliotheca",
+    "GOOGLE_LOGIN" : "Login with my Google Account",
+    "WITHOUT_LOGIN" : "Continue without login",
+    "KNOWLEDGE_BIBLIOTHECA" : "Knowledge Bibliotheca"
+  }
+}

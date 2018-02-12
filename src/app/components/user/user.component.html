@@ -1,6 +1,6 @@
 <div class="row" *ngIf="!socialUser">
   <div class="col-md-12">
-    <button class="btn btn-block btn-info" (click)="userModalLoginVisibility(true)">Login</button>
+    <button class="btn btn-block btn-info" (click)="userModalLoginVisibility(true)">{{ 'UNAUTHENTICATED_USER.LOGIN' | translate }}</button>
   </div>
 </div>
 
@@ -12,18 +12,17 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Welcome to Knowledge Bilbiotheca!</h5>
+          <h5 class="modal-title">{{ 'UNAUTHENTICATED_USER.WELCOME' | translate }}</h5>
           <button class="close" aria-label="Close" (click)="userModalLoginVisibility(false)">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p class="text-center">Choose any of the social networks listed below to login:</p>
           <hr />
           <div class="row">
             <div class="col-sm-12">
               <button class="btn btn-primary btn-block btn-social" (click)="googleLogin()">
-                Login with my google account
+                {{ 'UNAUTHENTICATED_USER.GOOGLE_LOGIN' | translate }}
               </button>
             </div>
           </div>
@@ -33,13 +32,13 @@
               <button class="btn btn-block"
                       (click)="userModalLoginVisibility(false)"
               >
-                Cotinue without login
+                {{ 'UNAUTHENTICATED_USER.WITHOUT_LOGIN' | translate }}
               </button>
             </div>
           </div>
           <hr>
           <p class="text-center font-weight-bold">
-            Knowledge Bilbiotheca
+            {{ 'UNAUTHENTICATED_USER.KNOWLEDGE_BIBLIOTHECA' | translate }}
           </p>
         </div>
       </div>
