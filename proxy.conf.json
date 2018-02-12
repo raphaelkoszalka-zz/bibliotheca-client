@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://challenge.raphael.website:9000",
+    "target": "https://bibliotheca.raphael.website",
     "secure": false
   }
 }
