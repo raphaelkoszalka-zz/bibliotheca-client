@@ -6,14 +6,16 @@ export class Basket {
   thumbnail: string|null;
   price: string|null;
   googleId: string|null;
+  queryId: string;
 
-  constructor(title, subtitle, selfLink, thumbnail, price, googleId) {
+  constructor(title, subtitle, selfLink, thumbnail, price, googleId, queryId) {
     this.title = title;
     this.subtitle = subtitle;
     this.selfLink = selfLink;
     this.thumbnail = thumbnail;
     this.price = price;
     this.googleId = googleId;
+    this.queryId = queryId;
   }
 
 }

@@ -4,6 +4,7 @@ import { Basket } from '../basket/basket';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { BibliothecaConstants } from '../../app.constants';
+import {QueryBuilderService} from '../../services/query-builder.service';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -26,7 +27,8 @@ export class ShoppingCartComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private http: BasketService
+    private http: BasketService,
+    private queryBuilder: QueryBuilderService
   ) {
     route.data.pluck('basket').subscribe( (basket: Observable<Basket[]>) => this.myBasket = basket );
     router.routeReuseStrategy.shouldReuseRoute = function(){ return false; }
@@ -49,7 +51,8 @@ export class ShoppingCartComponent implements OnInit {
       () => {
         this.showTip = true;
         setTimeout( () => this.showTip = false, 3500 );
-        this.http.getUserBasket(BibliothecaConstants.BASKET).subscribe( (res: any) => {
+        const USER_ID: Array<object> = [{ key: 'q', value: localStorage.getItem('USER_ID')}];
+        this.http.getUserBasket(BibliothecaConstants.BASKET + this.queryBuilder.builder(USER_ID, false)).subscribe( (res: any) => {
           this.myBasket = res;
           this.total = this.totalAmount(this.myBasket['rows']);
         });

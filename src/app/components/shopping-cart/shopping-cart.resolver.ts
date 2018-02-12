@@ -14,7 +14,7 @@ export class ShoppingCartResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<object>>  {
     return Observable.create((observer: Observer<any>) => {
-      const USER_ID: Array<object> = [{ key: 'userId.id', value: localStorage.getItem('USER_ID')}];
+      const USER_ID: Array<object> = [{ key: 'q', value: localStorage.getItem('USER_ID')}];
       this.http.getUserBasket(BibliothecaConstants.BASKET + this.queryBuilder.builder(USER_ID, false))
         .subscribe(
           (res) => { observer.next(res); observer.complete(); },

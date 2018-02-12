@@ -40,6 +40,7 @@ export class BasketComponent  {
       book['volumeInfo']['imageLinks']['smallThumbnail'] || null,
       price || null,
       book['id'],
+      localStorage.getItem('USER_ID')
     );
 
     this.http.postUserBasket(basket).subscribe( (res) => {
