@@ -51,7 +51,9 @@
   "SHOPPING_CART": {
     "SHOPPING_CART" : "Shopping Cart",
     "DETAIL" : "Detail",
-    "COIN": "U$$"
+    "COIN": "U$$",
+    "TIPSTER_TITLE" : "Removed",
+    "TIPSTER_MESSAGE" : "Book removed from your cart with success."
   },
   "UNAUTHENTICATED_USER": {
     "LOGIN": "Login",

@@ -3,6 +3,7 @@ import { FadeAnimation } from '../../app.animations';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute } from '@angular/router';
 import { BroadcasterService } from '../../services/broadcaster.service';
+import { pluck } from 'rxjs/operator/pluck';
 
 @Component({
   selector: 'app-book',
@@ -19,7 +20,7 @@ export class BookComponent implements OnInit{
   public user: string = localStorage.getItem('USER_ID');
 
   constructor(private route: ActivatedRoute, private broadcaster: BroadcasterService) {
-    route.data.pluck('book').subscribe( (book: object) => this.book = book );
+    this.book = route['data']['_value']['book'];
     this.paymentType = '0';
   }
 

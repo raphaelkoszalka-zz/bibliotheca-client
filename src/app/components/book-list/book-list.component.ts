@@ -1,10 +1,11 @@
 import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
 import { TypingService } from '../../services/typing.service';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/map';
 import { DeviceDetectorService } from '../../services/device-detector.service';
+import {Observable} from 'rxjs/Observable';
+import { pluck } from 'rxjs/operator/pluck';
+import 'rxjs';
+
 
 @Component({
   selector: 'app-book-list',
@@ -22,8 +23,8 @@ export class BookListComponent  {
     private router: Router,
     private route: ActivatedRoute,
     private typing: TypingService,
-    private deviceDetector: DeviceDetectorService,) {
-    route.data.pluck('books').subscribe( (books: Observable<Array<object>>) => this.books = books );
+    private deviceDetector: DeviceDetectorService) {
+    this.books = route['data']['_value']['books'];
     this.searchParameter = route['params']['_value']['category'] || '';
     this.deviceIsMobile = deviceDetector.mobileAndTabletcheck();
   }

@@ -52,7 +52,9 @@
   "SHOPPING_CART": {
     "SHOPPING_CART" : "Carrinho de compras",
     "DETAIL" : "Detalhe",
-    "COIN": "R$"
+    "COIN": "R$",
+    "TIPSTER_TITLE" : "Removido",
+    "TIPSTER_MESSAGE" : "Livro removido com sucesso do carrinho"
   },
   "UNAUTHENTICATED_USER": {
     "LOGIN": "Entrar",

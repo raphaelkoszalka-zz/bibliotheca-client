@@ -33,7 +33,11 @@ export class HomeComponent implements OnInit {
       action : 'home',
       class: 'alert-primary alert-home'
     };
-    this.setLanguage('en');
+    let lang = 'en';
+    if (localStorage.getItem('LANGUAGE')) {
+      lang = localStorage.getItem('LANGUAGE');
+    }
+    this.setLanguage(lang);
   }
 
   private static getRandomInt(min: number, max: number): number {
