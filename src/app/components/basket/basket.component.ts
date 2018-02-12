@@ -3,6 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import { Basket } from './basket';
 import { BasketService } from './basket.service';
 import { FadeAnimation } from '../../app.animations';
+import {TranslateService} from '@ngx-translate/core';
+import {BroadcasterService} from '../../services/broadcaster.service';
 
 @Component({
   selector: 'app-basket',
@@ -11,20 +13,29 @@ import { FadeAnimation } from '../../app.animations';
   animations: [FadeAnimation]
 })
 
-export class BasketComponent  {
+export class BasketComponent implements OnInit {
 
   @Input()
   public book:  Observable<object>;
   public showTip: boolean = false;
   public user: string = localStorage.getItem('TOLKIEN');
-  public tipsterConfig: object = {
-    action : 'post',
-    class: 'alert-success',
-    title: 'Well Done!',
-    message: 'Book added to your cart with success!'
-  };
+  public tipsterConfig: object;
 
-  constructor(private http: BasketService) {}
+  constructor(
+    private http: BasketService,
+    private translate: TranslateService,
+    private broadcaster: BroadcasterService
+  ) {
+    this.tipsterConfig  = {
+      action : 'post',
+      class: 'alert-success'
+    };
+    this.setLanguage('en');
+  }
+
+  ngOnInit() {
+    this.broadcaster.on<string>('LANGUAGE_CHANGED').subscribe(lang => this.setLanguage(lang));
+  }
 
   public addToBask(book: Observable<object>): void {
 
@@ -47,6 +58,11 @@ export class BasketComponent  {
       this.showTip = true;
       setTimeout( () => this.showTip = false, 3500);
     });
+  }
+
+  private setLanguage(lang: string): void {
+    this.translate.get('BASKET.TIPSTER_TITLE').subscribe(res => this.tipsterConfig['title'] = res);
+    this.translate.get('BASKET.TIPSTER_MESSAGE').subscribe(res => this.tipsterConfig['message'] = res);
   }
 
 }

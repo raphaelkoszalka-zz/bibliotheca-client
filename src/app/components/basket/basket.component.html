@@ -1,9 +1,9 @@
 <button class="btn btn-block btn-primary" *ngIf="user" (click)="addToBask(book)">
-  <i class="demo-icon icon-plus-squared"></i> Add to cart
+  <i class="demo-icon icon-plus-squared"></i> {{ 'BASKET.ADD_TO_CART' | translate }}
 </button>
 
 <button class="btn btn-block btn-primary" *ngIf="!user" (click)="addToBask(book)">
-  <i class="demo-icon icon-plus-squared"></i> Buy It
+  <i class="demo-icon icon-plus-squared"></i> {{ 'BASKET.BUY_IT' | translate }}
 </button>
 
 <app-tipster [config]="tipsterConfig" *ngIf="showTip"></app-tipster>

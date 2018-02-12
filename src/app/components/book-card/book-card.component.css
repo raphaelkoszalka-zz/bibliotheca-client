@@ -18,5 +18,6 @@
   .button-row {
     position: absolute;
     bottom: 5px;
+    width: inherit;
   }
 }

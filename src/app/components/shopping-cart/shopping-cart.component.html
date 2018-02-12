@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-9">
       <div class="col-sm-12">
-        <h1 class="display-5">Shopping cart:</h1>
+        <h1 class="display-5">{{ 'SHOPPING_CART.SHOPPING_CART' | translate }}:</h1>
         <hr>
       </div>
       <div class="col-sm-12" *ngFor="let book of myBasket['rows']">
@@ -12,19 +12,19 @@
               <img src="{{book.thumbnail}}"
                    style="max-height: 61px;" class="img-thumbnail" alt="{{book.title}}" />
             </div>
-            <div class="col-sm-4 info" style="display: inline;">
+            <div class="col-sm-3 info" style="display: inline;">
               <h6 class="card-title">{{book.title}}</h6>
               <p class="card-text">{{book.subtitle}}</p>
             </div>
-            <div class="col-sm-7 text-right">
+            <div class="col-sm-8 text-right">
               <h6 class="card-title text-right options">
                 <a href="/book/{{book.googleId}}">
                   <button class="btn btn-info">
-                    Detail
+                    {{ 'SHOPPING_CART.DETAIL' | translate }}
                   </button>
                 </a>
                 <button class="btn btn-primary">
-                  $ {{book.price | price}}
+                  {{ 'SHOPPING_CART.COIN' | translate }} {{book.price | price}}
                 </button>
                 <button class="btn btn-danger" (click)="deleteFromBasket(book.id)">
                   <i class="icon-trash"></i>

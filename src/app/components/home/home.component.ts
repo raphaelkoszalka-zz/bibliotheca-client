@@ -29,6 +29,10 @@ export class HomeComponent implements OnInit {
   ) {
     this.deviceIsMobile = deviceDetector.mobileAndTabletcheck();
     this.categoryType = '0';
+    this.tipsterConfig = {
+      action : 'home',
+      class: 'alert-primary alert-home'
+    };
     this.setLanguage('en');
   }
 
@@ -79,12 +83,6 @@ export class HomeComponent implements OnInit {
   }
 
   private setLanguage(lang): void {
-    this.translate.setDefaultLang(lang);
-    this.translate.use(lang);
-    this.tipsterConfig = {
-      action : 'home',
-      class: 'alert-primary alert-home'
-    };
     this.translate.get('HOME.TIPSTER_TITLE').subscribe(res => this.tipsterConfig['title'] = res);
     this.translate.get('HOME.TIPSTER_MESSAGE').subscribe(res => this.tipsterConfig['message'] = res);
   }

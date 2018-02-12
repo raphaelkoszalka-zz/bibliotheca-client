@@ -12,25 +12,27 @@
           </div>
           <div class="clearfix"></div>
         </div>
-        <div class="row button-row"  *ngIf="user">
-          <div class="col-md-5">
-            <a href="/book/{{book.id}}">
-              <button class="btn btn-block btn-info">
-                <i class="icon-search"></i> Detail
-              </button>
-            </a>
+        <div style="width: 100%">
+          <div class="row button-row"  *ngIf="user">
+            <div class="col-md-12">
+              <a href="/book/{{book.id}}">
+                <button class="btn btn-block btn-info">
+                  <i class="icon-search"></i> {{ 'CARD.DETAIL' | translate }}
+                </button>
+              </a>
+            </div>
+            <div class="col-md-12">
+              <app-basket  [book]="book"></app-basket>
+            </div>
           </div>
-          <div class="col-md-7">
-            <app-basket  [book]="book"></app-basket>
-          </div>
-        </div>
-        <div class="row button-row"  *ngIf="!user">
-          <div class="col-md-12">
-            <a href="/book/{{book.id}}">
-              <button class="btn btn-block btn-info">
-                <i class="icon-search"></i> Detail
-              </button>
-            </a>
+          <div class="row button-row"  *ngIf="!user">
+            <div class="col-md-12">
+              <a href="/book/{{book.id}}">
+                <button class="btn btn-block btn-info">
+                  <i class="icon-search"></i> {{ 'CARD.DETAIL' | translate }}
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>

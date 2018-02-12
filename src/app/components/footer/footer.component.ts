@@ -11,10 +11,13 @@ export class FooterComponent  {
   public languageSelector: string;
 
   constructor(private broadcaster: BroadcasterService) {
-    this.languageSelector = '0';
+    this.languageSelector = 'en';
+    if (localStorage.getItem('LANGUAGE')) {
+      this.languageSelector = localStorage.getItem('LANGUAGE');
+    }
   }
   public languageSelected(lang): void {
-    console.log(this.languageSelector);
     this.broadcaster.broadcast('LANGUAGE_CHANGED', lang);
+    localStorage.setItem('LANGUAGE', lang);
   }
 }

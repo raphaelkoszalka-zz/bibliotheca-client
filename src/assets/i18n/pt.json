@@ -1,4 +1,40 @@
 {
+  "AUTH_USER": {
+    "HELLO": "Olá ",
+    "SHOPPING_CART": "Carrinho de compras",
+    "LOGOUT": "Sair"
+  },
+  "BASKET": {
+    "BUY_IT": "Comprar",
+    "ADD_TO_CART": "Adicionar ao carrinho",
+    "TIPSTER_TITLE": "Pronto!",
+    "TIPSTER_MESSAGE": "Produto adicionado ao carrinho!"
+  },
+  "CARD": {
+    "DETAIL": "Ver Mais"
+  },
+  "CHECKOUT": {
+    "BUY_IT": "Comprar",
+    "PAYMENT_TYPE": "Forma de Pagamento",
+    "CREDIT_CARD": "Cartão de Crédito",
+    "INVOICE": "Boleto",
+    "AMOUNT": "Total a pagar",
+    "NAME_ON_CARD": "Nome como no cartão",
+    "CARD_NUMBER": "Número do Cartão",
+    "EXPIRATION": "Expiração",
+    "SECURITY_CODE": "Código de segurança",
+    "PAY": "Pagar",
+    "ERROR": "Você deve selecionar uma forma de pagamento",
+    "YY": "AA",
+    "POSTAL_CODE" : "CEP",
+    "CHECKOUT": "Pagamento",
+    "TOTAL_BOOKS": "Total de Livros",
+    "TOTAL_PRICE": "Valor Total",
+    "COIN": "R$"
+  },
+  "FOOTER" : {
+    "LANGUAGE_SELECT" : "Selecione um idioma"
+  },
   "HOME": {
     "I_WOULD_LIKE": "Eu gostaria de ",
     "LEARN_MORE": "aprender mais",
@@ -11,9 +47,18 @@
     "MATHEMATICS": "Matemática",
     "POLITICS": "Politica",
     "TIPSTER_TITLE": "Dica de profissa!",
-    "TIPSTER_MESSAGE": "Apenas comece a digitar e aperte 'enter' para atingir o conhecimento!"
+    "TIPSTER_MESSAGE": "Comece a digitar e aperte 'enter' para atingir o conhecimento!"
   },
-  "FOOTER" : {
-    "LANGUAGE_SELECT" : "Selecione um idioma"
+  "SHOPPING_CART": {
+    "SHOPPING_CART" : "Carrinho de compras",
+    "DETAIL" : "Detalhe",
+    "COIN": "R$"
+  },
+  "UNAUTHENTICATED_USER": {
+    "LOGIN": "Entrar",
+    "WELCOME" : "Bem vindo a Bibliotheca do Conhecimento",
+    "GOOGLE_LOGIN" : "Acessar com a minha Conta Google",
+    "WITHOUT_LOGIN" : "Continuar sem login",
+    "KNOWLEDGE_BIBLIOTHECA" : "Bibliotheca do Conhecimento"
   }
 }

@@ -1,6 +1,6 @@
 <div class="auth-user"(mouseenter)="userMenuVisibility(true)" (click)="userMenuVisibility(true)">
   <div class="col-xs-4 offset-xs-8 col-md-12 text-right">
-    <h5 *ngIf="!deviceIsMobile">Hello, {{authenticatedUser.user.name}}</h5>
+    <h5 *ngIf="!deviceIsMobile">{{ 'AUTH_USER.HELLO' | translate }}, {{authenticatedUser.user.name}}</h5>
     <img [src]="authenticatedUser.user.picture" id="auth-user-avatar" />
   </div>
   <div *ngIf="userMenuVisible" id="auth-user-menu" (mouseleave)="userMenuVisibility(false)" [@menuSlide]>
@@ -8,13 +8,13 @@
       <div class="auth-user-menu-item">
         <a [routerLink]="['/shopping-cart']">
           <div class="col-md-12">
-            <i class="demo-icon icon-basket"></i> <h6>My Shopping Cart</h6>
+            <i class="demo-icon icon-basket"></i> <h6>{{ 'AUTH_USER.SHOPPING_CART' | translate }}</h6>
           </div>
         </a>
       </div>
       <div class="auth-user-menu-item" (click)="logout()">
           <div class="col-md-12">
-            <i class="demo-icon icon-logout-1"></i> <h6>Logout</h6>
+            <i class="demo-icon icon-logout-1"></i> <h6>{{ 'AUTH_USER.LOGOUT' | translate }}</h6>
           </div>
       </div>
     </div>
