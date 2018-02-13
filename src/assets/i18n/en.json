@@ -2,6 +2,7 @@
   "AUTH_USER": {
     "HELLO": "Hello ",
     "SHOPPING_CART": "Shopping Cart",
+    "MY_ACCOUNT": "Minha Conta",
     "LOGOUT": "Logout"
   },
   "BASKET": {
@@ -29,7 +30,8 @@
     "CHECKOUT": "Checkout",
     "TOTAL_BOOKS": "Total Books",
     "TOTAL_PRICE": "Total Price",
-    "COIN": "U$$"
+    "COIN": "U$$",
+    "DOWNLOAD_PDF" : "Download Invoice"
   },
   "FOOTER" : {
     "LANGUAGE_SELECT" : "Select a language"
@@ -47,6 +49,15 @@
     "POLITICS": "Politics",
     "TIPSTER_TITLE": "Pro Tip!",
     "TIPSTER_MESSAGE": "Just start typing and press 'enter' to achieve knowledge!"
+  },
+  "MY_ACCOUNT" : {
+    "TITLE": "My Account",
+    "NAME": "Name",
+    "EMAIL": "E-mail",
+    "BIRTHDAY": "Birthday",
+    "LANGUAGE" : "Language",
+    "ABOUT" : "About",
+    "UPDATE": "Update"
   },
   "SHOPPING_CART": {
     "SHOPPING_CART" : "Shopping Cart",

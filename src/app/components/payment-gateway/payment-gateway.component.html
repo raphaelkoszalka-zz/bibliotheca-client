@@ -8,6 +8,7 @@
 </div>
 <p class="text-danger text-center" *ngIf="paymentNotSelected">{{ 'CHECKOUT.ERROR' | translate }}</p>
 <button class="btn btn-block btn-primary" (click)="doCheckout()">{{ 'CHECKOUT.BUY_IT' | translate }}</button>
+
 <hr>
 
 <div *ngIf="modalVisible" [@fade]>

@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BibliothecaConstants } from '../../app.constants';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
+import { User } from './my-account';
 
 @Injectable()
-export class PaymentGatewayService {
+export class MyAccountService {
 
   private httpOptions: object;
   constructor(private http: HttpClient) {
@@ -17,9 +17,13 @@ export class PaymentGatewayService {
     };
   }
 
-  public postPDF(item: any): Observable<object> {
-    console.log(item);
-    return this.http.post(BibliothecaConstants.INVOICE, item, this.httpOptions)
+  public getUser(userUrl: string): Observable<User> {
+    return this.http.get(userUrl, this.httpOptions)
+      .catch(e => Observable.throw('Error: ' + e));
+  }
+
+  public putUser(userUrl: string, user: User): Observable<User> {
+    return this.http.put(userUrl, user, this.httpOptions)
       .catch(e => Observable.throw('Error: ' + e));
   }
 

@@ -40,6 +40,9 @@ import { BookResolver } from './components/book/book.resolver';
 import { PaymentGatewayComponent } from './components/payment-gateway/payment-gateway.component';
 import { PaymentGatewayService } from './components/payment-gateway/payment-gateway.service';
 import { CreditCardValidationService } from './services/credit-card-validation.service';
+import {MyAccountComponent} from './components/my-account/my-account.component';
+import {MyAccountResolver} from './components/my-account/my-account.resolver';
+import {MyAccountService} from './components/my-account/my-account.service';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -64,7 +67,8 @@ export function createTranslateLoader(http: HttpClient) {
     BasketComponent,
     ModalComponent,
     PricePipe,
-    PaymentGatewayComponent
+    PaymentGatewayComponent,
+    MyAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +98,9 @@ export function createTranslateLoader(http: HttpClient) {
     DeviceDetectorService,
     BookResolver,
     PaymentGatewayService,
-    CreditCardValidationService
+    CreditCardValidationService,
+    MyAccountResolver,
+    MyAccountService
   ],
   bootstrap: [AppComponent]
 })

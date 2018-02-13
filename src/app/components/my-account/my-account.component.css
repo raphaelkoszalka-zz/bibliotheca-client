@@ -1,0 +1,11 @@
+section {
+  padding-top: 25px;
+  padding-bottom: 45px;
+  overflow: auto;
+  width: 100%;
+  height: calc(100% - 40px);
+}
+.my-account {
+  border: 1px solid #593196;
+  padding: 10px;
+}

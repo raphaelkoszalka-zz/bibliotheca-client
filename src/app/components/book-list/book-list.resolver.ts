@@ -12,8 +12,6 @@ export class BookListResolver implements Resolve<any> {
 
   constructor(private http: GenericHttpService, private queryBuilder: QueryBuilderService) {}
 
-
-
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Array<object>>  {
     const HOME_QUERIES: Array<object> = [
       { key: 'q', value: route['params']['category']},
