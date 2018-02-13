@@ -8,13 +8,20 @@
       <div class="auth-user-menu-item">
         <a [routerLink]="['/shopping-cart']">
           <div class="col-md-12">
-            <i class="demo-icon icon-basket"></i> <h6>{{ 'AUTH_USER.SHOPPING_CART' | translate }}</h6>
+            <i class="icon-basket"></i> <h6>{{ 'AUTH_USER.SHOPPING_CART' | translate }}</h6>
           </div>
         </a>
       </div>
+      <!--<div class="auth-user-menu-item">-->
+        <!--<a [routerLink]="['/my-account']">-->
+          <!--<div class="col-md-12">-->
+            <!--<i class="icon-address-card"></i> <h6>{{ 'AUTH_USER.MY_ACCOUNT' | translate }}</h6>-->
+          <!--</div>-->
+        <!--</a>-->
+      <!--</div>-->
       <div class="auth-user-menu-item" (click)="logout()">
           <div class="col-md-12">
-            <i class="demo-icon icon-logout-1"></i> <h6>{{ 'AUTH_USER.LOGOUT' | translate }}</h6>
+            <i class="icon-logout-1"></i> <h6>{{ 'AUTH_USER.LOGOUT' | translate }}</h6>
           </div>
       </div>
     </div>

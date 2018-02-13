@@ -2,6 +2,7 @@
   "AUTH_USER": {
     "HELLO": "Olá ",
     "SHOPPING_CART": "Carrinho de compras",
+    "MY_ACCOUNT": "Minha Conta",
     "LOGOUT": "Sair"
   },
   "BASKET": {
@@ -30,7 +31,8 @@
     "CHECKOUT": "Pagamento",
     "TOTAL_BOOKS": "Total de Livros",
     "TOTAL_PRICE": "Valor Total",
-    "COIN": "R$"
+    "COIN": "R$",
+    "DOWNLOAD_PDF" : "Salvar Boleto"
   },
   "FOOTER" : {
     "LANGUAGE_SELECT" : "Selecione um idioma"
@@ -48,6 +50,15 @@
     "POLITICS": "Politica",
     "TIPSTER_TITLE": "Dica de profissa!",
     "TIPSTER_MESSAGE": "Comece a digitar e aperte 'enter' para atingir o conhecimento!"
+  },
+  "MY_ACCOUNT" : {
+    "TITLE": "Minha conta",
+    "NAME": "Nome",
+    "EMAIL": "E-mail",
+    "BIRTHDAY": "Data de nascimento",
+    "LANGUAGE" : "Idioma",
+    "ABOUT" : "Sobre min",
+    "UPDATE": "Atualizar"
   },
   "SHOPPING_CART": {
     "SHOPPING_CART" : "Carrinho de compras",

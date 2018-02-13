@@ -9,28 +9,32 @@ import { AuthGuard } from './guardians/auth.guardian';
 import { BookListResolver } from './components/book-list/book-list.resolver';
 import { ShoppingCartResolver } from './components/shopping-cart/shopping-cart.resolver';
 import { BookResolver } from './components/book/book.resolver';
+import {MyAccountComponent} from './components/my-account/my-account.component';
+import {MyAccountResolver} from './components/my-account/my-account.resolver';
 
 const ROUTES: Routes = [
   {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
-  },{
+  }, {
     path: 'home',
     component: HomeComponent
-  },{
-    path: 'home/:welcome-back',
-    component: HomeComponent
-  },{
+  }, {
     path: 'shopping-cart',
     component: ShoppingCartComponent,
     canActivate: [AuthGuard],
     resolve: { 'basket': ShoppingCartResolver }
-  },{
+  }, {
+    path: 'my-account',
+    component: MyAccountComponent,
+    canActivate: [AuthGuard],
+    resolve: { 'myAccount': MyAccountResolver }
+  }, {
     path: 'books/:category',
     component: BookListComponent,
     resolve: { 'books': BookListResolver }
-  },{
+  }, {
     path: 'book/:bookId',
     component: BookComponent,
     resolve: { 'book': BookResolver }

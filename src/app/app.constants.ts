@@ -10,6 +10,7 @@ export class BibliothecaConstants {
   public static BASKET: string = BibliothecaConstants.API_BASE + '/basket';
   public static INVOICE: string = BibliothecaConstants.API_BASE + '/invoice';
   public static AUTH_TOKEN: string = BibliothecaConstants.API_BASE + '/auth/';
+  public static MY_ACCOUNT: string = BibliothecaConstants.API_BASE + '/user/';
 
   // google books
   public static GOOGLE_BOOKS_KEY: string = 'AIzaSyCOp3DWsbb7LPG4XOUbhn9zfbGNcPuTtUE';
