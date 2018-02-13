@@ -5,8 +5,6 @@ node {
         	checkout scm
         }
         stage ('Build') {
-        sh "echo 'Updating Bibliotheca NPM packages.'"
-        sh "npm update"
         sh "echo 'Installing Bibliotheca NPM packages.'"
 		    sh "npm install"
 		    sh "echo 'Starting Bibliotheca Building'"
