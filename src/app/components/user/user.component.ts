@@ -3,7 +3,7 @@ import { BroadcasterService } from '../../services/broadcaster.service';
 import { FadeAnimation } from '../../app.animations';
 import { AuthService } from 'angularx-social-login';
 import { SocialUser } from 'angularx-social-login';
-import { GoogleLoginProvider, FacebookLoginProvider } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 import { UserService } from './user.service';
 import { AuthenticatedUser } from '../user-authenticated/user-authenticated';
 import { Router } from '@angular/router';
@@ -65,7 +65,7 @@ export class UserComponent implements OnInit {
     localStorage.setItem('USER_ID', user['user']['id']);
   }
 
-  private getAccessToken(user: SocialUser) : void {
+  private getAccessToken(user: SocialUser): void {
     this.socialUser = user;
     this.http.getApiAccessToken(user).subscribe( res => this.userLoggedIn(res) );
   }

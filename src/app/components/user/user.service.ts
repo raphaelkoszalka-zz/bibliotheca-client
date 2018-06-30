@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BibliothecaConstants } from '../../app.constants';
 import { Observable } from 'rxjs/Observable';
 import { SocialUser } from 'angularx-social-login';
-import 'rxjs/add/operator/catch'
+import 'rxjs/add/operator/catch';
+
 
 @Injectable()
 export class UserService {
