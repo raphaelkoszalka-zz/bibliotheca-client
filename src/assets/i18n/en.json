@@ -2,12 +2,12 @@
   "AUTH_USER": {
     "HELLO": "Hello ",
     "SHOPPING_CART": "Shopping Cart",
-    "MY_ACCOUNT": "Minha Conta",
+    "MY_ACCOUNT": "My Account",
     "LOGOUT": "Logout"
   },
   "BASKET": {
     "BUY_IT": "Buy It",
-    "ADD_TO_CART": "Add to cart",
+    "ADD_TO_CART": "Add to wish list",
     "TIPSTER_TITLE": "Well Done!",
     "TIPSTER_MESSAGE": "Book added to shopping cart!"
   },
@@ -22,7 +22,7 @@
     "AMOUNT": "Payment Amount",
     "NAME_ON_CARD": "Name on Card",
     "CARD_NUMBER": "Card number",
-    "EXPIRATION": "Exiration",
+    "EXPIRATION": "Expiration",
     "SECURITY_CODE": "Security Code",
     "PAY": "Pay",
     "ERROR": "You must select a payment type",

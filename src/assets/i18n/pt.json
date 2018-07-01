@@ -7,9 +7,9 @@
   },
   "BASKET": {
     "BUY_IT": "Comprar",
-    "ADD_TO_CART": "Adicionar ao carrinho",
+    "ADD_TO_CART": "Adicionar a lista de desejo",
     "TIPSTER_TITLE": "Pronto!",
-    "TIPSTER_MESSAGE": "Produto adicionado ao carrinho!"
+    "TIPSTER_MESSAGE": "Produto adicionado aa lista de desejo!"
   },
   "CARD": {
     "DETAIL": "Ver Mais"

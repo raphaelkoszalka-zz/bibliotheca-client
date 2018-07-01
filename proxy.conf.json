@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://bibliotheca.raphael.website",
-    "secure": false
+    "target": "https://www.bibliotheca.online",
+    "secure": true
   }
 }
